@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+\setlength{\parindent}{0pt}
+%Problem hier
+%Bei a), b), ... bitte dieses benutzen
+Let $\alpha$ be a real number, $1<\alpha<2$.
+\begin{enumerate}[label=\alph*)]
+\item Show that $\alpha$ has a unique representation as an infinite product 
+\[
+\alpha=\left(1+\frac{1}{n_1}\right)\left(1+\frac{1}{n_2}\right)\dots
+\]
+where each $n_i$ is a positive integer satisfying
+\[n_i^2\leq n_{i+1}.\]
+\item Show that $\alpha$ is rational if and only if its infinite product has the following property:
+For some $m$ and all $k\geq m$, \[
+n_{k+1}=n_k^2.\]
+\end{enumerate}
+
+\end{document}

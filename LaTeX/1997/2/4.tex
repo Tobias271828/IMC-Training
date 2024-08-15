@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+\DeclareMathOperator{\Tr}{tr}
+
+\begin{document}
+\setlength{\parindent}{0pt}
+%Problem hier
+%Bei a), b), ... bitte dieses benutzen
+\begin{enumerate}[label=\alph*)]
+\item Let the mapping $f:M_n\to \mathbb{R}$ from the space $M_n=\mathbb{R}^{n^2}$ of $n\times n $ matrices with real entries to reals be linear, i.e.:
+\begin{equation}\label{1997-2-4-eq1}
+f(A+B)=f(A)+f(B),\ f(c A)=c f(A)
+\end{equation}
+for any $A,B\in M_n, c\in \mathbb{R}$. Prove that there exists a unique matrix $C\in M_n$ such that $f(A)=\Tr (AC)$ for any $A\in M_n$. (If $A=\{a_{ij}\}_{i,j=1}^n$ then $\Tr(A)=\sum_{i=1}^n a_{ii}$).
+\item Suppose in addition to \eqref{1997-2-4-eq1} that  
+\begin{equation}\label{1997-2-4-eq2}
+f(AB)=f(BA)
+\end{equation}
+for any $A,B\in M_n$. Prove that there exists $\lambda \in \mathbb{R}$ such that $f(A)=\lambda\Tr(A)$.
+\end{enumerate}
+
+\end{document}

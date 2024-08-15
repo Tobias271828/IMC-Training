@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+\setlength{\parindent}{0pt}
+%Problem hier
+%Bei a), b), ... bitte dieses benutzen
+For a natural number $n$ consider the hyperplane
+\[
+R_0^n=\left\{ x=(x_1,x_2,\dots, x_n)\in \mathbb{R}^n: \sum_{n=1}^n x_i=0\right\}
+\]
+and the lattice $Z_0^n=\{y\in R_0^n:\ \text{all}\ y_i\  \text{are integers}\}$. 
+Define the (quasi-)norm in $\mathbb{R}^n$ by $\lVert x \rVert_p=\left(\sum_{i=1}^n |x_i|^p\right)^{1/p}$ if $0<p<\infty$, and $\lVert x \rVert_\infty=\max_i |x_i|.$
+\begin{enumerate}[label=\alph*)]
+\item Let $x\in R_0^n$ be such that 
+\[
+\max_i x_i- \min_i x_i \leq 1.
+\]
+For every $p\in [1,\infty]$ and for every $y\in Z_0^n$ prove that
+\[
+\lVert x\rVert_p\leq \lVert x+y\rVert_p.
+\]
+\item For every $p\in (0,1)$, show that there is an $n$ and an $x\in R_0^n$ with $\max_i x_i -\min_i x_i \leq 1$ and $y\in Z_0^n$ such that 
+\[
+\lVert x \rVert_p> \lVert x+y\rVert_p.
+\]
+\end{enumerate}
+
+\end{document}
