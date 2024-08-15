@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+\setlength{\parindent}{0pt}
+%Problem hier
+%Bei a), b), ... bitte dieses benutzen
+%\begin{enumerate}[label=\alph*)]
+%\end{enumerate}
+For an integer $n\ge3$ consider the sets$$S_{n}=\{(x_{1},x_{2},\dots,x_{n}):\forall i\;x_{i}\in\{0,1,2\}\}$$
+\begin{multline*}
+A_{n}=\{(x_{1},x_{2},\dots,x_{n})\in S_{n}:\forall i\le n-2\\|\{x_{i},x_{i+1},x_{i+2}\}|\ne1\}
+\end{multline*}
+and
+\begin{multline*}
+B_{n}=\{(x_{1},x_{2},\dots,x_{n})\in S_{n}:\forall i\le n-1\\(x_{i}=x_{i+1}\implies x_{i}\ne0)\}.
+\end{multline*}
+Prove that $|A_{n+1}|=3\cdot|B_{n}|$.\newline
+($|A|$ denotes the number of elements of the set $A$.)
+\end{document}

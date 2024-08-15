@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+\setlength{\parindent}{0pt}
+Let $a_{0}=\sqrt{2}$, $b_{0}=2$, $a_{n+1}=\sqrt{2-\sqrt{4-a_{n}^{2}}}$, $b_{n+1}=\frac{2b_{n}}{2+\sqrt{4+b_{n}^{2}}}$.
+\begin{enumerate}[label=\alph*)]
+\item Prove that the sequences $(a_{n})$, $(b_{n})$ are decreasing and converge to $0$.
+\item Prove that the sequence $(2^{n}a_{n})$ is increasing, the sequence $(2^{n}b^{n})$ is decreasing and that these two sequences converge to the same limit.
+\item Prove that there is a positive constant $C$ such that for all $n$ the following inequality holds: $0<b_{n}-a_{n}<\frac{C}{8^{n}}$.
+\end{enumerate}
+\end{document}

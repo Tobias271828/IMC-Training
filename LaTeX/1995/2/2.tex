@@ -1,0 +1,24 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+	\setlength{\parindent}{0pt}
+	Let $\{b_n\}_{n=0}^\infty$ be a sequence of positive real numbers such that $b_0=1$, $b_n=2+\sqrt{b_{n-1}}-2\sqrt{1+\sqrt{b_{n-1}}}$. Calculate
+	$$\sum_{n=1}^{\infty}b_n 2^n.$$
+\end{document}

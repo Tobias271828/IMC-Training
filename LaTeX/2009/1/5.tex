@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+\setlength{\parindent}{0pt}
+%Problem hier
+%Bei a), b), ... bitte dieses benutzen
+%\begin{enumerate}[label=\alph*)]
+%\end{enumerate}
+Let $n$ be a positive integer. An $n$\emph{-simplex} in $\mathbb{R}^{n}$ is given by $n+1$ points $P_{0},P_{1},\dots,P_{n}$, called its \emph{vertices}, which do not all belong to the same hyperplane. For every $n$-simplex $S$ we denote by $v(S)$ the volume of $S$, and we write $C(S)$ for the center of the unique sphere containing all the vertices of $S$.\newline
+Suppose that $P$ is a point inside an $n$-simplex $S$. Let $S_{i}$ be the $n$-simplex obtained from $S$ by replacing its $i$-th vertex by $P$. Prove that
+\begin{multline*}
+v(S_{0})C(S_{0})+v(S_{1})C(S_{1})+\cdots+v(S_{n})C(S_{n})\\=v(S)C(S).
+\end{multline*}
+\end{document}

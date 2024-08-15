@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+\setlength{\parindent}{0pt}
+%Problem hier
+%Bei a), b), ... bitte dieses benutzen
+%\begin{enumerate}[label=\alph*)]
+%\end{enumerate}
+For $n\ge0$ define matrices $A_{n}$ and $B_{n}$ as follows: $A_{0}=B_{0}=(1)$ and for every $n>0$$$A_{n}=\begin{pmatrix}A_{n-1}&A_{n-1}\\A_{n-1}&B_{n-1}\end{pmatrix}\text{ and }B_{n}=\begin{pmatrix}A_{n-1}&A_{n-1}\\A_{n-1}&0\end{pmatrix}.$$Denote the sum of all elements of a matrix $M$ by $S(M)$. Prove that $S(A_{n}^{k-1})=S(A^{n-1}_{k})$ for every $n,k\ge1$.
+\end{document}

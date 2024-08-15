@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+\setlength{\parindent}{0pt}
+%Problem hier
+%Bei a), b), ... bitte dieses benutzen
+%\begin{enumerate}[label=\alph*)]
+%\end{enumerate}
+Consider a polynomial$$f(x)=x^{2012}+a_{2011}x^{2011}+\dots+a_{1}x+a_{0}.$$Albert Einstein and Homer Simpson are playing the following game. In turn, they choose one of the coefficients $a_{0},\dots,a_{2011}$ and assign a real value to it. Albert has the first move. Once a value is assigned to a coefficient, it cannot be changed any more. The game ends after all the coefficients have been assigned values.\newline
+Homer's goal is to make $f(x)$ divisible by a fixed polynomial $m(x)$ and Albert's goal is to prevent this.
+\begin{enumerate}[label=\alph*)]
+\item Which of the players has a winning strategy if $m(x)=x-2012$?
+\item Which of the players has a winning strategy if $m(x)=x^{2}+1$?
+\end{enumerate}
+\end{document}

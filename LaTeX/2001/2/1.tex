@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+\setlength{\parindent}{0pt}
+%Problem hier
+%Bei a), b), ... bitte dieses benutzen
+%\begin{enumerate}[label=\alph*)]
+%\end{enumerate}
+Let $r,s\ge1$ be integers and $a_{0},a_{1},\dots,a_{r-1},b_{0},b_{1}$, $\dots,b_{s-1}$ be real non-negative numbers such that
+\begin{align*}
+&(a_{0}+a_{1}x+a_{2}x^{2}+\dots+a_{r-1}x^{r-1}+x^{r})\\
+&\cdot(b_{0}+b_{1}x+b_{2}x^{2}+\dots+b_{s-1}x^{s-1}+x^{s})\\
+=&\mathop{}1+x+x^{2}+\dots+x^{r+s-1}+x^{r+s}.
+\end{align*}
+Prove that each $a_{i}$ and each $b_{j}$ equals either $0$ or $1$.
+\end{document}

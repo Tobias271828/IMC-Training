@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+\setlength{\parindent}{0pt}
+%Problem hier
+%Bei a), b), ... bitte dieses benutzen
+%\begin{enumerate}[label=\alph*)]
+%\end{enumerate}
+Let $p$ be a prime number and $\mathbb{F}_{p}$ be the field of residues modulo $p$. Let $W$ be the smallest set of polynomials with coefficients in $\mathbb{F}_{p}$ such that
+\begin{itemize}
+\item the polynomials $x+1$ and $x^{p-2}+x^{p-3}+\cdots+x^{2}+2x+1$ are in $W$, and
+\item for any polynomials $h_{1}(x)$ and $h_{2}(x)$ in $W$ the polynomial $r(x)$, which is the remainder of $h_{1}(h_{2}(x))$ modulo $x^{p}-x$, is also in $W$.
+\end{itemize}
+How many polynomials are there in $W$?
+\end{document}

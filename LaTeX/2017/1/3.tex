@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+\setlength{\parindent}{0pt}
+%Problem hier
+%Bei a), b), ... bitte dieses benutzen
+%\begin{enumerate}[label=\alph*)]
+%\end{enumerate}
+For any positive integer $m$, denote by $P\left(m\right)$ the product of positive divisors of $m$ (e.g. $P(6)=36$). For every positive integer $n$ define the sequence 
+$$ a_1(n)=n,\;a_{k+1}(n)=P(a_k(n))\;(k=1,2,\ldots,2016). $$
+Determine whether for every set $S\subseteq\{1,2,\ldots,2017\}$, there exists a positive integer $n$ such that the following condition is satisfied:\newline
+\emph{For every $k$ with $1\le k\le	2017$, the number $a_k(n)$ is a perfect square if and only if $k\in	S$.}
+\end{document}

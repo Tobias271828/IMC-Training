@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+	\setlength{\parindent}{0pt}
+	\begin{enumerate}[label=\alph*)]
+		\item  Prove that for every $\epsilon>0$ there is a positive integer $n$ and real numbers $\lambda_1,\dots,\lambda_n$ such that
+		$$\max_{x\in [-1,1]}\left\lvert x-\sum_{k=1}^{n}\lambda_k x^{2k+1}\right\rvert<\epsilon.$$
+		\item  Prove that for every odd continuous function $f$ on $[-1,1]$ and for every $\epsilon>0$ there is a positive integer $n$ and real numbers $\mu_1,\dots,\mu_n$ such that
+		$$\max_{x\in [-1,1]}\left\lvert f(x)-\sum_{k=1}^{n}\mu_k x^{2k+1}\right\rvert<\epsilon.$$
+		Recall that $f$ is odd means that $f(x)=-f(-x)$ for all $x\in [-1,1]$.
+	\end{enumerate}
+\end{document}

@@ -1,0 +1,26 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+	\setlength{\parindent}{0pt}
+	Let $f$ be a continuous function on $[0, 1]$ such that for every $x\in[0, 1]$ we have
+	$$\int_{x}^{1}f(t)\;\textup{d}t\geq\frac{1-x^2}{2}.$$
+	Show that
+	$$\int_{0}^{1}f^2(t)\;\textup{d}t\geq\frac{1}{3}.$$
+\end{document}

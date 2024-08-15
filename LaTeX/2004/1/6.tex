@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+\setlength{\parindent}{0pt}
+%Problem hier
+%Bei a), b), ... bitte dieses benutzen
+%\begin{enumerate}[label=\alph*)]
+%\end{enumerate}
+For every complex number $z\notin\{0,1\}$ define$$f(z)\vcentcolon=\sum(\log z)^{-4},$$where the sum is over all branches of the complex logarithm.
+\begin{enumerate}[label=\alph*)]
+\item Show that there are two polynomials $P$ and $Q$ such that $f(z)=P(z)/Q(z)$ for all $z\in\mathbb{C}\setminus\{0,1\}$.
+\item Show that for all $z\in\mathbb{C}\setminus\{0,1\}$$$f(z)=z\frac{z^{2}+4z+1}{6(z-1)^{4}}.$$
+\end{enumerate}
+\end{document}

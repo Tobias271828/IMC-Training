@@ -1,0 +1,486 @@
+#    This is source code of the IMC-Training App which is intended for IMC training.
+#    Copyright (C) 2024  Tobias Schnieders
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#
+#    You can contact the developer via imctrainingapp.g8199@slmails.com
+
+
+
+WindowManager:
+    MainWindow:
+    LicenceReadmeWindow:
+    IMCTrainingWindow:
+    IMCShowWindow:
+    MikeRandomExerciseWindow:
+    EinstellungsWindow:
+    StatusimcproblemeWindow:
+
+<MainWindow>:
+    name: "main"
+    mikestrainingstarteronmainwindow: mikestrainingstarteronmainwindow
+    imctrainingstartbutton: imctrainingstartbutton
+    imcproblemstartbutton: imcproblemstartbutton
+    settingsstartbutton: settingsstartbutton
+    GridLayout:
+        cols: 1
+        Button:
+            id: imctrainingstartbutton
+            text: "IMC-Training"
+            font_size: 70
+            on_release:
+                app.root.current = "imctraining"
+                root.manager.transition.direction = "left"
+                app.root.get_screen("imctraining").currentimcexercise.text = "---- / - / -"
+                app.root.get_screen("imctraining").solvedandnextexercise.disabled = True
+                app.root.get_screen("imctraining").imcimage.source = './images/empty.jpg'
+        Button:
+            text: "IMC-Probleme"
+            id: imcproblemstartbutton
+            font_size: 70
+            on_release:
+                app.root.current = "imcshow"
+                root.manager.transition.direction = "left"
+                app.root.get_screen("imcshow").showjahr.text = ""
+                app.root.get_screen("imcshow").showtag.text = ""
+                app.root.get_screen("imcshow").showexercise.text = ""
+                app.root.get_screen("imcshow").showexercise.values = ""
+                app.root.get_screen("imcshow").showimage.source = './images/empty.jpg'
+        Button:
+            text: "Mike's Training"
+            id: mikestrainingstarteronmainwindow
+            font_size: 70
+            on_release:
+                app.root.current = "mikerandom"
+                root.manager.transition.direction = "left"
+                app.root.get_screen("mikerandom").exercise_label.text = "-- / --"
+        Button:
+            id: settingsstartbutton
+            text: "Einstellungen"
+            font_size: 70
+            on_release:
+                app.root.current = "einstellungen"
+                root.manager.transition.direction = "left"
+
+<LicenceReadmeWindow>
+    name: "licencereadme"
+    switchaccept: switchaccept
+    textfield: textfield
+    continuebutton: continuebutton
+    GridLayout:
+        cols: 1
+        ScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
+            Label:
+                id: textfield
+                text: "This is an App which is intended for IMC training.\nCopyright (C) 2024  Tobias Schnieders\n\nThis program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.\n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License along with this program.  If not, see <https://www.gnu.org/licenses/>.\n\nYou can contact the developer via imctrainingapp.g8199@slmails.com\n\nFor more information about the IMC problems and the IMC in general, please look at the IMC website (https://www.imc-math.org.uk/).\n\nThis app is written in kivy and python and uses furthermore SDL2, SDL_mixer, docutils, pygments, glew, gstreamer, sjpeg and more (the licensing and copyright notices can be found in the App/Additional_copying_and_licencing folder in the GitHub repository (https://github.com/Tobias314159/IMC-Training/). Many thanks to the developers of those projects!\n\nPrivacy Notice (from the 14th August 2024): I have developed the app in such a way that - as far as I know - the app does not send any user data anywhere. All your data remains on your device. This privacy notice can be changed at any time without having to inform you. Therefore, I kindly ask you to check it regularly. Changes might for example be made if new features require them. A synchronisation function for training in a team would for example require certain personal information to be send over the internet. Since I have not developed kivy, python or the libraries or the dependencies needed for building the app, I will not take any responsibility if any personal information got shared with anyone, since I do not know how they work. If you want to know more about this, I kindly ask you to download the source code of the app and build it yourself and carefully read through all licence, privacy or similar related notices or agreements of all the dependencies."
+                size_hint_y: None
+                height: self.texture_size[1]
+                text_size: self.width, None
+        GridLayout:
+            size_hint_y: 0.15*root.size_hint_y
+            cols: 2
+            Label:
+                text: "I have read carefully; I accept"
+            Switch:
+                size_hint_x: None
+                width: 300
+                id: switchaccept
+                active: False
+                on_active: root.switchacceptchange()
+        Button:
+            size_hint_y: 0.15*root.size_hint_y
+            text: "Continue"
+            id: continuebutton
+            disabled: True
+            on_release: root.continuebuttonpress()
+            
+    
+
+<IMCTrainingWindow>
+    name: "imctraining"
+    solvedandnextexercise: solvedandnextexercise
+    currentimcexercise: currentimcexercise
+    imcimage: imcimage
+    textnextexercise: textnextexercise
+    onlynewexercise: onlynewexercise
+    GridLayout:
+        cols: 1
+        Label:
+            id: textnextexercise
+            text: "Nächste IMC-Aufgabe:"
+            font_size: 70
+        Label:
+            id: currentimcexercise
+            text: "---- / - / -"
+            font_size: 150
+        AsyncImage:
+            id: imcimage
+            source: './images/empty.jpg'
+            size: self.texture_size
+            size_hint_y: None
+            height: self.width
+        Button:
+            id: solvedandnextexercise
+            text: "Aufgabe gelöst, neue Aufgabe"
+            font_size: 70
+            size: 100, 50
+            on_release:
+                root.solvedandnextimcexercisechooser()
+        Button:
+            id: onlynewexercise
+            text: "Neue Aufgabe"
+            font_size: 70
+            size: 100, 50
+            on_release:
+                root.nextimcexercisechooser()
+
+<Popup1@Popup>
+    popuptext: popuptext
+    nobutton: nobutton
+    yesbutton: yesbutton
+    size_hint_x: 0.95
+    size_hint_y: 0.3
+    title: "Sicher?"
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            id: popuptext
+        BoxLayout:
+            Button:
+                id: nobutton
+                text: "Nein"
+                color: 1,0,0,1
+                on_release:
+                    root.popupanswer = False
+                    root.dismiss()
+            Button:
+                id: yesbutton
+                text: "Ja"
+                color: 0,1,0,1
+                on_release:
+                    root.popupanswer = True
+                    root.dismiss()
+
+<Popup2@Popup>
+    size_hint_x: 0.95
+    size_hint_y: 0.95
+    title: "Important information"
+    BoxLayout:
+        orientation: "vertical"
+        ScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
+            Label:
+                id: popuptext
+                size_hint_y: None
+                text_size: self.width, None
+                height: self.texture_size[1]
+                text: "This is an App which is intended for IMC training.\nCopyright (C) 2024  Tobias Schnieders\n\nThis program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.\n\nThis program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.\n\nYou should have received a copy of the GNU General Public License along with this program.  If not, see <https://www.gnu.org/licenses/>.\n\nYou can contact the developer via imctrainingapp.g8199@slmails.com\n\nFor more information about the IMC problems and the IMC in general, please look at the IMC website (https://www.imc-math.org.uk/).\n\nThis app is written in kivy and python and uses furthermore SDL2, SDL_mixer, docutils, pygments, glew, gstreamer, sjpeg and more (the licensing and copyright notices can be found in the App/Additional_copying_and_licencing folder in the GitHub repository (https://github.com/Tobias314159/IMC-Training/). Many thanks to the developers of those projects!\n\nPrivacy Notice (from the 14th August 2024): I have developed the app in such a way that - as far as I know - the app does not send any user data anywhere. All your data remains on your device. This privacy notice can be changed at any time without having to inform you. Therefore, I kindly ask you to check it regularly. Changes might for example be made if new features require them. A synchronisation function for training in a team would for example require certain personal information to be send over the internet. Since I have not developed kivy, python or the libraries or the dependencies needed for building the app, I will not take any responsibility if any personal information got shared with anyone, since I do not know how they work. If you want to know more about this, I kindly ask you to download the source code of the app and build it yourself and carefully read through all licence, privacy or similar related notices or agreements of all the dependencies."
+        Button:
+            text: "OK"
+            size_hint_y: 0.1
+            on_release:
+                root.dismiss()
+
+
+
+<IMCShowWindow>:
+    name: "imcshow"
+    showjahr: showjahr
+    showtag: showtag
+    showexercise: showexercise
+    showimage: showimage
+    jahrtext: jahrtext
+    tagtext: tagtext
+    aufgabetext: aufgabetext
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 2
+            Label:
+                id: jahrtext
+                text: "Jahr"
+            Spinner:
+                id: showjahr
+                on_text:
+                    root.jahrspin()
+        GridLayout:
+            cols: 2
+            Label:
+                id: tagtext
+                text: "Tag"
+            Spinner:
+                id: showtag
+                values: "1","2"
+                on_text:
+                    root.tagspin()
+        GridLayout:
+            cols: 2
+            Label:
+                id: aufgabetext
+                text: "Aufgabe"
+            Spinner:
+                id: showexercise
+                on_text:
+                    root.exercisespin()
+        AsyncImage:
+            id: showimage
+            source: './images/empty.jpg'
+            size: self.texture_size
+            size_hint_y: None
+            height: self.width
+
+<MikeRandomExerciseWindow>:
+    exercise_label: exercise_label
+    zusatzknopf: zusatzknopf
+    mikerandomnewexercisetext: mikerandomnewexercisetext
+    mikerandomnewexercise: mikerandomnewexercise
+    name: "mikerandom"
+    GridLayout:
+        cols: 1
+        Label:
+            id: mikerandomnewexercisetext
+            text: "Nächste Aufgabe:"
+            font_size: 70
+            color: 0.17, 0.35, 0.84, 1
+        Label:
+            id: exercise_label
+            text: "-- / --"
+            font_size: 150
+        Button:
+            id: mikerandomnewexercise
+            text: "Neue Aufgabe"
+            font_size: 70
+            size: 100, 50
+            on_press: root.exercise_chooser()
+        Button:
+            id: zusatzknopf
+            text: "Neue Aufgabe aus Kapitel 9"
+            font_size: 70
+            size: 100, 50
+            on_press: root.exercise_chooser_c8()
+
+<EinstellungsWindow>:
+    name: "einstellungen"
+    languagespin: languagespin
+    switchonlynewimcexersices: switchonlynewimcexersices
+    switchusemikestraining: switchusemikestraining
+    switchhideexercisenumber: switchhideexercisenumber
+    imcstatistik: imcstatistik
+    randomcounterlabel: randomcounterlabel
+    miketrainingtopicspin: miketrainingtopicspin
+    miketrainingtopicspinlabel: miketrainingtopicspinlabel
+    usealsomikestrainingtext: usealsomikestrainingtext
+    zeigenurungeloestetext: zeigenurungeloestetext
+    verbergeaufgabennummerntext: verbergeaufgabennummerntext
+    seestatusofimcproblemsbutton: seestatusofimcproblemsbutton
+    importantinformationbutton: importantinformationbutton
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 2
+            Label:
+                text: "Language"
+            Spinner:
+                id: languagespin
+                values: "English", "Deutsch"
+                on_text:
+                    root.changelanguagespinner()
+        GridLayout:
+            cols: 2
+            Label:
+                id: usealsomikestrainingtext
+                text: "Nutze auch Mike's Training"
+            Switch:
+                size_hint_x: None
+                width: 300
+                id: switchusemikestraining
+                on_active: root.changeswitchusemikestraining()
+        GridLayout:
+            cols: 2
+            Label:
+                id: miketrainingtopicspinlabel
+                text: "Thema in Mike's Training"
+            Spinner:
+                id: miketrainingtopicspin
+                text: "1"
+                values: "1","2","3","4","5","6","7","8","9","10","11","12"
+                on_text:
+                    root.changemikespinner()
+        GridLayout:
+            cols: 2
+            Label:
+                id: zeigenurungeloestetext
+                text: "Zeige nur ungelöste IMC-Aufgaben"
+            Switch:
+                size_hint_x: None
+                width: 300
+                id: switchonlynewimcexersices
+                on_active: root.changeswitchonlynewimcexersices()
+        GridLayout:
+            cols: 2
+            Label:
+                id: verbergeaufgabennummerntext
+                text: "Verberge IMC-Aufgabennummern"
+            Switch:
+                size_hint_x: None
+                width: 300
+                id: switchhideexercisenumber
+                on_active: root.changeswitchhideexercisenumber()
+        Button:
+            id: seestatusofimcproblemsbutton
+            text: "Status der IMC-Probleme einsehen/ändern"
+            on_release:
+                app.root.current = "statusimcprobleme"
+                root.manager.transition.direction = "left"
+        Label:
+            id: imcstatistik
+            text: ""
+        Label:
+            id: randomcounterlabel
+            text: ""
+        Button:
+            id: importantinformationbutton
+            text: "Important information"
+            on_release: root.showreadmeandlicence()
+
+<StatusimcproblemeWindow>:
+    name: "statusimcprobleme"
+    statusjahr: statusjahr
+    statustag: statustag
+    labeltextid: labeltextid
+    aufgabe1: aufgabe1
+    aufgabe2: aufgabe2
+    aufgabe3: aufgabe3
+    aufgabe4: aufgabe4
+    aufgabe5: aufgabe5
+    aufgabe6: aufgabe6
+    gridaufgabe1: gridaufgabe1
+    gridaufgabe2: gridaufgabe2
+    gridaufgabe3: gridaufgabe3
+    gridaufgabe4: gridaufgabe4
+    gridaufgabe5: gridaufgabe5
+    gridaufgabe6: gridaufgabe6
+    chooseyeartext: chooseyeartext
+    choosedaytext: choosedaytext
+    exercise1text: exercise1text
+    exercise2text: exercise2text
+    exercise3text: exercise3text
+    exercise4text: exercise4text
+    exercise5text: exercise5text
+    exercise6text: exercise6text
+    GridLayout:
+        cols: 1
+        GridLayout:
+            cols: 2
+            Label:
+                id: chooseyeartext
+                text: "Wähle Jahr"
+            Spinner:
+                id: statusjahr
+                on_text:
+                    root.changejahrspinner()
+        GridLayout:
+            cols: 2
+            Label:
+                id: choosedaytext
+                text: "Wähle Tag"
+            Spinner:
+                id: statustag
+                values: "1","2"
+                on_text:
+                    root.changetagspinner()
+        Label:
+            id: labeltextid
+            text: ""
+        GridLayout:
+            cols: 2
+            opacity: 0
+            id: gridaufgabe1
+            Label:
+                id: exercise1text
+                text: "Aufgabe 1"
+            Switch:
+                size_hint_x: None
+                width: 300
+                id: aufgabe1
+                disabled: True
+                on_active: root.changeaufgabe1()
+        GridLayout:
+            cols: 2
+            opacity: 0
+            id: gridaufgabe2
+            Label:
+                id: exercise2text
+                text: "Aufgabe 2"
+            Switch:
+                size_hint_x: None
+                width: 300
+                id: aufgabe2
+                disabled: True
+                on_active: root.changeaufgabe2()
+        GridLayout:
+            cols: 2
+            opacity: 0
+            id: gridaufgabe3
+            Label:
+                id: exercise3text
+                text: "Aufgabe 3"
+            Switch:
+                size_hint_x: None
+                width: 300
+                id: aufgabe3
+                disabled: True
+                on_active: root.changeaufgabe3()
+        GridLayout:
+            cols: 2
+            opacity: 0
+            id: gridaufgabe4
+            Label:
+                id: exercise4text
+                text: "Aufgabe 4"
+            Switch:
+                size_hint_x: None
+                width: 300
+                id: aufgabe4
+                disabled: True
+                on_active: root.changeaufgabe4()
+        GridLayout:
+            cols: 2
+            opacity: 0
+            id: gridaufgabe5
+            Label:
+                id: exercise5text
+                text: "Aufgabe 5"
+            Switch:
+                size_hint_x: None
+                width: 300
+                id: aufgabe5
+                disabled: True
+                on_active: root.changeaufgabe5()
+        GridLayout:
+            cols: 2
+            opacity: 0
+            id: gridaufgabe6
+            Label:
+                id: exercise6text
+                text: "Aufgabe 6"
+            Switch:
+                size_hint_x: None
+                width: 300
+                id: aufgabe6
+                disabled: True
+                on_active: root.changeaufgabe6()

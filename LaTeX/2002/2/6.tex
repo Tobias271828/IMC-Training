@@ -1,0 +1,34 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+\setlength{\parindent}{0pt}
+%Problem hier
+%Bei a), b), ... bitte dieses benutzen
+%\begin{enumerate}[label=\alph*)]
+%\end{enumerate}
+Let $f:\mathbb{R}^{n}\to\mathbb{R}$ be a convex function whose gradient $\nabla f=\left(\frac{\partial f}{\partial x_{1}},\dots,\frac{\partial f}{\partial x_{n}}\right)$ exists at every point of $\mathbb{R}^{n}$ and satisfies the condition
+\begin{multline*}
+\exists L>0\forall x_{1},x_{2}\in\mathbb{R}^{n}:\\||\nabla f(x_{1})-\nabla f(x_{2})||\le L||x_{1}-x_{2}||.
+\end{multline*}
+Prove that
+\begin{multline*}
+\forall x_{1},x_{2}\in\mathbb{R}^{n}:||\nabla f(x_{1})-\nabla f(x_{2})||^{2}\\\le L\langle\nabla f(x_{1})-\nabla f(x_{2}),x_{1}-x_{2}\rangle.
+\end{multline*}In this formula $\langle a,b\rangle$ denotes the scalar product of the vectors $a$ and $b$.
+\end{document}

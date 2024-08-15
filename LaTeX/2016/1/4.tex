@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+\setlength{\parindent}{0pt}
+%Problem hier
+%Bei a), b), ... bitte dieses benutzen
+%\begin{enumerate}[label=\alph*)]
+%\end{enumerate}
+Let $n\ge k$ be positive integers, and let $\mathcal{F}$ be a family of finite sets with the following properties:
+\begin{enumerate}[label=(\roman*)]
+\item $\mathcal{F}$ contains at least $\binom{n}{k}+1$ distinct sets containing exactly $k$ elements;
+\item for any two sets $A,B\in \mathcal{F}$, their union $A\cup B$ also belongs to $\mathcal{F}$.
+\end{enumerate}
+Prove that $\mathcal{F}$ contains at least three sets with at least $n$ elements.
+\end{document}

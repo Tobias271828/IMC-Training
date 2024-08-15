@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+	\setlength{\parindent}{0pt}
+	Suppose that $\{f_n\}_{n=1}^\infty$ is a sequence of continuous functions on the interval $[0,1]$ such that
+	$$\int_{0}^{1} f_m(x)f_n(x)\,\textup{d}x=\begin{cases}
+		1&\textup{if }n=m\\
+		0&\textup{if }n\neq m
+	\end{cases}$$
+	and
+	$$\sup\{\lvert f_n(x)\rvert\;\vert\; x\in[0,1]\textup{ and }n=1,2,\dots\}<+\infty.$$
+	Show that there exists no subsequence $\{f_{n_k}\}$ of $\{f_n\}$ such that $\lim_{k\to\infty} f_{n_k}(x)$ exists for all $x\in[0,1]$.
+\end{document}
