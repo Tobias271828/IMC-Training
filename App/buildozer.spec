@@ -29,7 +29,7 @@ source.include_exts = py,png,jpg,kv,atlas,txt,md
 #source.exclude_patterns = license,images/*/*.jpg
 
 # (str) Application versioning (method 1)
-version = 1.17
+version = 1.18
 
 # (str) Application versioning (method 2)
 # version.regex = __version__ = ['"](.*)['"]
@@ -104,7 +104,7 @@ android.presplash_lottie = startanimation.json
 android.api = 34
 
 # (int) Minimum API your APK / AAB will support.
-android.minapi = 33
+android.minapi = 28
 
 # (int) Android SDK version to use
 #android.sdk = 20

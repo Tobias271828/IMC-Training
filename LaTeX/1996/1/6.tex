@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage[paperwidth=13.5cm,paperheight=13.5cm, margin=0.75cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+	\setlength{\parindent}{0pt}
+	Upper content of a subset $E$ of the plane $\mathbb{R}^2$ is defined as
+	$$\mathcal{C}(E)=\inf\left\{\sum_{i=1}^{n}\textup{diam}(E_i)\right\}$$
+	where $\inf$ is taken over all finite families of sets $E_1,\dots,E_n$, $n\in\mathbb{N}$, in $\mathbb{R}^2$ such that $E\subset\bigcup_{i=1}^n E_i$. Lower content of $E$ is defined as
+	\begin{multline*}
+		\mathcal{K}(E)=\sup\{\textup{length}(L)\,\vert\\\
+		 \textup{$L$ is a closed line segment onto which $E$ can be contracted}\}.
+	\end{multline*}
+	Show that
+	\begin{enumerate}[label=(\alph*)]
+		\item $\mathcal{C}(L)=\textup{length}(L)$ if $L$ is a closed line segment;
+		\item $\mathcal{C}(E)\geq\mathcal{K}(E)$;
+		\item the equality in $(b)$ needs not hold even if $E$ is compact.
+	\end{enumerate}
+	\textbf{Remarks:} All \textit{distances} used in this Problem are Euclidian. \textit{Diameter} of a set $E$ is $\textup{diam}(E)=\sup\{\textup{dist}(x,y)\vert x,y\in E\}$. \textit{Contraction} of a set $E$ to a set $F$ is a mapping $f:E\to F$ such that $\textup{dist}(f(x),f(y))\leq\textup{dist}(x,y)$ for all $x,y\in E$. A set $E$ can be contracted \textit{onto} a set $F$ if there is a contraction $f$ of $E$ to $F$ which is onto, i.e., such that $f(E)=F$. 
+	%\textit{Triangle} is defined as the union of the three segments joining its vertices, i.e., it does not contain the interior.
+\end{document}

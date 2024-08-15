@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+	\setlength{\parindent}{0pt}
+	Let $a_1=1$, $a_n=\frac{1}{n}\sum_{k=1}^{n-1}a_ka_{n-k}$ for $n\geq 2$. Show that
+	\begin{enumerate}[label=(\roman*)]
+		\item $\limsup_{n\to\infty}\lvert a_n\rvert^{1/n}<2^{-1/2}$;
+		\item $\limsup_{n\to\infty}\lvert a_n\rvert^{1/n}\geq 2/3$.
+	\end{enumerate}
+\end{document}

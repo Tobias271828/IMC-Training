@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+	\setlength{\parindent}{0pt}
+	\begin{enumerate}[label=\alph*)]
+		\item Let $a$, $b$ be real numbers such that $b\leq0$ and $1+ax+bx^2\geq0$ for every $x$ in $[0,1]$. Prove that
+		$$\lim_{n\to+\infty} n\int_{0}^{1}(1+ax+bx^2)^n\;\textup{d} x=\begin{cases}
+			-\frac{1}{a}&\textup{if }a<0,\\
+			+\infty&\textup{if }a\geq 0.
+		\end{cases}$$
+		\item Let $f:[0,1]\to[0,\infty)$ be a function with a continuous second derivative and let $f''(x)\leq0$ for every $x$ in $[0,1]$. Suppose that $L=\lim_{n\to\infty} n\int_{0}^{1}(f(x))^n\;\textup{d}x$ exists and $0<L<+\infty$. Prove that $f'$ has a constant sign and $\min_{x\in[0,1]}\lvert f'(x)\rvert=L^{-1}$.
+	\end{enumerate}
+\end{document}

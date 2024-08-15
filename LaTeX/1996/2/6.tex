@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+	\setlength{\parindent}{0pt}
+	\begin{enumerate}[label=(\roman*)]
+		\item Prove that for every sequence $\{a_n\}_{n=1}^\infty$, such that $a_n>0,\, n=1,2,\dots$ and $\sum_{n=1}^{\infty}a_n<\infty$, we have
+		$$\sum_{n=1}^{\infty}(a_1a_2\dots a_n)^{1/n}<\textup{e}\sum_{n=1}^{\infty}a_n,$$
+		where \textup{e} is the natural $\log$ base.
+		\item  Prove that for every $\varepsilon>0$ there exists a sequence $\{a_n\}_{n=1}^\infty$, such that $a_n>0,\, n=1,2,\dots$, $\sum_{n=1}^{\infty}a_n<\infty$ and 
+		$$\sum_{n=1}^{\infty}(a_1a_2\dots a_n)^{1/n}>(\textup{e}-\varepsilon)\sum_{n=1}^{\infty} a_n.$$
+	\end{enumerate}
+\end{document}
