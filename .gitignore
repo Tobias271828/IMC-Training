@@ -1,5 +1,5 @@
 *.aux
 *.log
 *.gz
-*.json
+App/imc-training-data.json
 App/.buildozer
