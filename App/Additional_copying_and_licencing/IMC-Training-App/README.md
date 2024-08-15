@@ -10,9 +10,9 @@ For more information about the IMC problems and the IMC in general, please look 
 
 The app supports English and German.
 
-You can download the app from the Google Play Store or download the apk file from the App/bin folder on GitHub (https://github.com/Tobias314159/IMC-Training/). Alternatively, you can build the app from source yourself.
+You can download the app from the Google Play Store or download the apk file from the App/bin folder on GitHub (https://github.com/Tobias271828/IMC-Training/). Alternatively, you can build the app from source yourself.
 
-This app is Open Source and licenced under the GPL-3.0-or-later licence. The source code can be found on GitHub (https://github.com/Tobias314159/IMC-Training/). This app is written in kivy and python and uses furthermore SDL2, SDL_mixer, docutils, pygments, glew, gstreamer, sjpeg and more (the licensing and copyright notices can be found in the App/Additional_copying_and_licencing folder in the GitHub repository (https://github.com/Tobias314159/IMC-Training/). Many thanks to the developers of those projects!
+This app is Open Source and licenced under the GPL-3.0-or-later licence. The source code can be found on GitHub (https://github.com/Tobias271828/IMC-Training/). This app is written in kivy and python and uses furthermore SDL2, SDL_mixer, docutils, pygments, glew, gstreamer, sjpeg and more (the licensing and copyright notices can be found in the App/Additional_copying_and_licencing folder in the GitHub repository (https://github.com/Tobias271828/IMC-Training/). Many thanks to the developers of those projects!
 
 Many thanks to Barbara Roos, Jonathan Frey and Jakob Feldner for their great support in LaTeX-typing, but also Bug-testing and suggesting new functionalities for the App!
 
