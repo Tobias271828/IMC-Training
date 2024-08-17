@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+	\setlength{\parindent}{0pt}
+	\begin{enumerate}[label=\alph*)]
+		\item For each $1<p<\infty$ find a constant \\
+		$c_p<\infty$ for which the following statement holds: If $f:[-1,1]\to\mathbb{R}$ is a continuously differentiable function satisfying $f(1)>f(-1)$ and $\lvert f'(y)\rvert\leq 1$ for all $y\in[-1,1]$, then there is an $x\in[-1,1]$ such that $f'(x)>0$ and\\
+		$\lvert f(y)-f(x)\rvert\leq c_p(f'(x))^{1/p}\lvert y-x\rvert$ for all\\
+		$y\in[-1,1]$.
+		\item Does such a constant also exist for $p=1$?
+	\end{enumerate}
+\end{document}

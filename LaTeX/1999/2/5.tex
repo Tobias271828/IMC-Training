@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+	\setlength{\parindent}{0pt}
+    Let $S$ be the set of all words consisting of the letters $x,y,z$, and consider an equivalence relation $\sim$ on $S$ satisfying the following conditions: for arbitrary words $u,v,w\in S$
+    \begin{enumerate}[label=(\roman*)]
+    	\item $uu\sim u$;
+    	\item if $v\sim w$ then $uv\sim uw$ and $vu\sim wu$.
+    \end{enumerate}
+    Show that every word in $S$ is equivalent to a word of length at most 8.
+\end{document}

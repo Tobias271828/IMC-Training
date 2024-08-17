@@ -1,0 +1,26 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+	\setlength{\parindent}{0pt}
+	Let $A$ be a subset of $\mathbb{Z}_n=\mathbb{Z}/n\mathbb{Z}$ containing at most $\frac{1}{100}\ln n$ elements. Define the $r$th Fourier coefficient of $A$ for $r\in\mathbb{Z}_n$ by
+	$$f(r)=\sum_{s\in A}\exp\left(\frac{2\pi\textup{i}}{n}sr\right).$$
+	Prove that there exists an $r\neq 0$, such that\\
+	$\lvert f(r)\rvert\geq\frac{\lvert A\rvert}{2}.$
+\end{document}
