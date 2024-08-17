@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+\setlength{\parindent}{0pt}
+%Problem hier
+%Bei a), b), ... bitte dieses benutzen
+An alien race has three genders: male, female, and emale. A \emph{married triple} consists of three persons, one from each gender, who all like each other. Any person is allowed to belong to at most one married triple. A special feature of this race is that feelings are always mutual — if $x$ likes $y$, then $y$ likes $x$.\newline The race is sending an expedition to colonize a planet. The expedition has $n$ males, $n$ females, and $n$ emales. It is known that every expedition member likes at least $k$ persons of each of the two other genders. The problem is to create as many married triples as possible to produce healthy offspring so the colony could grow and prosper.
+\begin{enumerate}[label=\alph*)]
+\item Show that if $n$ is even and $k=\frac n2$, then it might be impossible to create even one married triple.
+\item Show that if $k\ge\frac{3n}{4}$, then it is always possible to create $n$ disjoint married triples, thus marrying all of the expedition members.
+\end{enumerate}
+\end{document}
