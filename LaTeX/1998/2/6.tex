@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+	\setlength{\parindent}{0pt}
+	Let $f:(0,1)\to[0,\infty)$ be a function that is zero except at the distinct points $a_1,a_2,\dots$\,. Let $b_n=f(a_n)$.
+	\begin{enumerate}[label=(\alph*)]
+		\item Prove that if $\sum_{n=1}^{\infty} b_n<\infty$, then $f$ is differentiable at at least one point $x\in(0,1)$.
+		\item Prove that for any sequence of non-negative real numbers $(b_n)_{n=1}^\infty$, with $\sum_{n=1}^{\infty} b_n=\infty$, there exists a sequence $(a_n)_{n=1}^\infty$ such that the function $f$ defined as above is nowhere differentiable.
+	\end{enumerate}
+\end{document}

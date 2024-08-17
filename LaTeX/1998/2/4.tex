@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+	\setlength{\parindent}{0pt}
+	Let $A_n=\{1,2,\dots,n\}$, where $n\geq3$. Let $\mathcal{F}$ be the family of all non-constant functions $f:A_n\to A_n$ satisfying the following conditions:
+	\begin{enumerate}[label=(\arabic*)]
+		\item  $f(k)\leq f(k+1)$ for $k=1,2,\dots,n-1$,
+		\item $f(k)=f(f(k+1))$ for $k=1,2,\dots,n-1$.
+	\end{enumerate}
+	Find the number of functions in $\mathcal{F}$.
+\end{document}

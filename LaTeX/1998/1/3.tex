@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+	\setlength{\parindent}{0pt}
+	Let $f(x)=2x(1-x),\, x\in\mathbb{R}$. Define
+	$$f_n=\underbrace{f\circ\dots\circ f}_n.$$
+	\begin{enumerate}[label=\alph*)]
+		\item Find $\lim_{n\to\infty}\int_{0}^{1}f_n(x)\,\textup{d}x$.
+		\item Compute $\int_{0}^{1}f_n(x)\,\textup{d}x$ for $n=1,2,\dots$.
+	\end{enumerate}
+\end{document}

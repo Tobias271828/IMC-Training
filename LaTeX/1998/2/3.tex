@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage[paperwidth=9cm,paperheight=9cm, margin=0.5cm]{geometry}
+\usepackage{enumitem}
+\pagenumbering{gobble}
+\usepackage[ngerman,british]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+\usepackage{lmodern}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{wasysym}
+\usepackage{faktor}
+\usepackage{tikz}
+
+
+\begin{document}
+	\setlength{\parindent}{0pt}
+	Let $0<c<1$ and
+	$$f(x)=\begin{cases}
+		\frac{x}{c}&\textup{for }x\in[0,c],\\
+		\frac{1-x}{1-c}&\textup{for }x\in[c,1].
+	\end{cases}$$
+	We say that $p$ is an $n$-periodic point if
+	$$\underbrace{f(f(\dots f}_n (p)))=p$$
+	and $n$ is the smallest number with this property. Prove that for every $n\geq 1$ the set of $n$-periodic points is non-empty and finite.
+\end{document}
