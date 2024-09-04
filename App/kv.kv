@@ -74,7 +74,7 @@ WindowManager:
             on_release:
                 app.root.current = "statisticwindow"
                 root.manager.transition.direction = "left"
-                pass
+                root.generatestatistic()
         Button:
             id: settingsstartbutton
             text: "Einstellungen"
@@ -207,10 +207,40 @@ WindowManager:
 
 <StatisticWindow>:
     name: "statisticwindow"
+    statisticlabel0: statisticlabel0
     statisticlabel1: statisticlabel1
-    Label:
-        id: statisticlabel1
-        text: "tba"
+    statisticlabel2: statisticlabel2
+    statisticlabel3: statisticlabel3
+    statisticlabel4: statisticlabel4
+    statisticlabel5: statisticlabel5
+    statisticlabel6: statisticlabel6
+    statisticlabelrand: statisticlabelrand
+    GridLayout:
+        cols: 1
+        Label:
+            id: statisticlabel0
+            text: ""
+        Label:
+            id: statisticlabel1
+            text: ""
+        Label:
+            id: statisticlabel2
+            text: ""
+        Label:
+            id: statisticlabel3
+            text: ""
+        Label:
+            id: statisticlabel4
+            text: ""
+        Label:
+            id: statisticlabel5
+            text: ""
+        Label:
+            id: statisticlabel6
+            text: ""
+        Label:
+            id: statisticlabelrand
+            text: ""
 
 <IMCShowWindow>:
     name: "imcshow"
@@ -295,7 +325,7 @@ WindowManager:
     switchusemikestraining: switchusemikestraining
     switchhideexercisenumber: switchhideexercisenumber
     # imcstatistik: imcstatistik
-    randomcounterlabel: randomcounterlabel
+    # randomcounterlabel: randomcounterlabel
     miketrainingtopicspin: miketrainingtopicspin
     miketrainingtopicspinlabel: miketrainingtopicspinlabel
     usealsomikestrainingtext: usealsomikestrainingtext
@@ -364,9 +394,9 @@ WindowManager:
         # Label:
         #     id: imcstatistik
         #     text: ""
-        Label:
-            id: randomcounterlabel
-            text: ""
+        # Label:
+        #     id: randomcounterlabel
+        #     text: ""
         Button:
             id: importantinformationbutton
             text: "Important information"

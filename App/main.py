@@ -42,7 +42,23 @@ class Popup2(Factory.Popup):
     pass
 
 class MainWindow(Screen):
-    pass
+    def generatestatistic(self):
+        aufgabengeloest = [0,0,0,0,0,0]
+        aufgabengesamt = [0,0,0,0,0,0]
+        for jahr in trainingdata['imc']:
+            for tag in trainingdata['imc'][jahr]:
+                if tag == "1" or tag == "2":
+                    for i in range(trainingdata['imc'][jahr]['numberofproblemsperday']):
+                        aufgabengesamt[i] += 1
+                        if trainingdata['imc'][jahr][tag][i] == "s":
+                            aufgabengeloest[i] += 1
+        App.get_running_app().root.get_screen("statisticwindow").statisticlabel1.text = "o_o"
+        App.get_running_app().root.get_screen("statisticwindow").statisticlabel1.text = str(aufgabengeloest[0])+" von "+str(aufgabengesamt[0])+" IMC-Aufgaben 1 gelöst (" + str(round(100*(aufgabengeloest[0])/aufgabengesamt[0],2))+"%)" if trainingdata['einstellungen']['language'] == "Deutsch" else "Solved "+str(aufgabengeloest[0])+" out of "+str(aufgabengesamt[0])+" IMC problems 1 (" + str(round(100*(aufgabengeloest[0])/aufgabengesamt[0],2))+"%)"
+        App.get_running_app().root.get_screen("statisticwindow").statisticlabel2.text = str(aufgabengeloest[1])+" von "+str(aufgabengesamt[1])+" IMC-Aufgaben 2 gelöst (" + str(round(100*(aufgabengeloest[1])/aufgabengesamt[1],2))+"%)" if trainingdata['einstellungen']['language'] == "Deutsch" else "Solved "+str(aufgabengeloest[1])+" out of "+str(aufgabengesamt[1])+" IMC problems 2 (" + str(round(100*(aufgabengeloest[1])/aufgabengesamt[1],2))+"%)"
+        App.get_running_app().root.get_screen("statisticwindow").statisticlabel3.text = str(aufgabengeloest[2])+" von "+str(aufgabengesamt[2])+" IMC-Aufgaben 3 gelöst (" + str(round(100*(aufgabengeloest[2])/aufgabengesamt[2],2))+"%)" if trainingdata['einstellungen']['language'] == "Deutsch" else "Solved "+str(aufgabengeloest[2])+" out of "+str(aufgabengesamt[2])+" IMC problems 3 (" + str(round(100*(aufgabengeloest[2])/aufgabengesamt[2],2))+"%)"
+        App.get_running_app().root.get_screen("statisticwindow").statisticlabel4.text = str(aufgabengeloest[3])+" von "+str(aufgabengesamt[3])+" IMC-Aufgaben 4 gelöst (" + str(round(100*(aufgabengeloest[3])/aufgabengesamt[3],2))+"%)" if trainingdata['einstellungen']['language'] == "Deutsch" else "Solved "+str(aufgabengeloest[3])+" out of "+str(aufgabengesamt[3])+" IMC problems 4 (" + str(round(100*(aufgabengeloest[3])/aufgabengesamt[3],2))+"%)"
+        App.get_running_app().root.get_screen("statisticwindow").statisticlabel5.text = str(aufgabengeloest[4])+" von "+str(aufgabengesamt[4])+" IMC-Aufgaben 5 gelöst (" + str(round(100*(aufgabengeloest[4])/aufgabengesamt[4],2))+"%)" if trainingdata['einstellungen']['language'] == "Deutsch" else "Solved "+str(aufgabengeloest[4])+" out of "+str(aufgabengesamt[4])+" IMC problems 5 (" + str(round(100*(aufgabengeloest[4])/aufgabengesamt[4],2))+"%)"
+        App.get_running_app().root.get_screen("statisticwindow").statisticlabel6.text = str(aufgabengeloest[5])+" von "+str(aufgabengesamt[5])+" IMC-Aufgaben 6 gelöst (" + str(round(100*(aufgabengeloest[5])/aufgabengesamt[5],2))+"%)" if trainingdata['einstellungen']['language'] == "Deutsch" else "Solved "+str(aufgabengeloest[5])+" out of "+str(aufgabengesamt[5])+" IMC problems 6 (" + str(round(100*(aufgabengeloest[5])/aufgabengesamt[5],2))+"%)"
 
 
 class StatisticWindow(Screen):
@@ -251,8 +267,7 @@ def trainingdata_aktualisieren(self):
     App.get_running_app().root.get_screen("einstellungen").switchonlynewimcexersices.active = trainingdata['einstellungen']['onlynewimcexercises']
     App.get_running_app().root.get_screen("einstellungen").switchusemikestraining.active = trainingdata['einstellungen']['usemikestraining']
     App.get_running_app().root.get_screen("einstellungen").switchhideexercisenumber.active = trainingdata['einstellungen']['hideexercisenumber']
-    App.get_running_app().root.get_screen("einstellungen").randomcounterlabel.text = "Zufallsgenerator bisher " +str(trainingdata['numberofrandom'])+"-mal genutzt" if trainingdata['einstellungen']['language'] == "Deutsch" else "Randomizer used " +str(trainingdata['numberofrandom'])+" times"
-    App.get_running_app().root.get_screen("einstellungen").importantinformationbutton.text = "Wichtige Informationen" if trainingdata['einstellungen']['language'] == "Deutsch" else "Important information"
+    App.get_running_app().root.get_screen("statisticwindow").statisticlabelrand.text = "Zufallsgenerator bisher " +str(trainingdata['numberofrandom'])+"-mal genutzt" if trainingdata['einstellungen']['language'] == "Deutsch" else "Randomizer used " +str(trainingdata['numberofrandom'])+" times"
     App.get_running_app().root.get_screen("einstellungen").miketrainingtopicspin.text = trainingdata['einstellungen']['miketrainingtopic']
     App.get_running_app().root.get_screen("einstellungen").miketrainingtopicspin.disabled = not App.get_running_app().root.get_screen("einstellungen").switchusemikestraining.active
     App.get_running_app().root.get_screen("einstellungen").miketrainingtopicspin.opacity = 1 if App.get_running_app().root.get_screen("einstellungen").switchusemikestraining.active else 0.6
@@ -289,7 +304,7 @@ def trainingdata_aktualisieren(self):
                         imcproblemeungeloest += 1
         imcproblemegesamt += 2*int(trainingdata['imc'][jahr]['numberofproblemsperday'])
     # App.get_running_app().root.get_screen("einstellungen").imcstatistik.text = "Bisher "+str(imcproblemegesamt-imcproblemeungeloest)+" von "+str(imcproblemegesamt)+" IMC-Aufgaben gelöst (" + str(round(100*(imcproblemegesamt-imcproblemeungeloest)/imcproblemegesamt,2))+"%)" if trainingdata['einstellungen']['language'] == "Deutsch" else "Solved "+str(imcproblemegesamt-imcproblemeungeloest)+" out of "+str(imcproblemegesamt)+" IMC problems (" + str(round(100*(imcproblemegesamt-imcproblemeungeloest)/imcproblemegesamt,2))+"%)" Das war die kleine Statistik in den Einstellungen
-    App.get_running_app().root.get_screen("statisticwindow").statisticlabel1.text = "Bisher "+str(imcproblemegesamt-imcproblemeungeloest)+" von "+str(imcproblemegesamt)+" IMC-Aufgaben gelöst (" + str(round(100*(imcproblemegesamt-imcproblemeungeloest)/imcproblemegesamt,2))+"%)" if trainingdata['einstellungen']['language'] == "Deutsch" else "Solved "+str(imcproblemegesamt-imcproblemeungeloest)+" out of "+str(imcproblemegesamt)+" IMC problems (" + str(round(100*(imcproblemegesamt-imcproblemeungeloest)/imcproblemegesamt,2))+"%)"
+    App.get_running_app().root.get_screen("statisticwindow").statisticlabel0.text = "Bisher "+str(imcproblemegesamt-imcproblemeungeloest)+" von "+str(imcproblemegesamt)+" IMC-Aufgaben gelöst (" + str(round(100*(imcproblemegesamt-imcproblemeungeloest)/imcproblemegesamt,2))+"%)" if trainingdata['einstellungen']['language'] == "Deutsch" else "Solved "+str(imcproblemegesamt-imcproblemeungeloest)+" out of "+str(imcproblemegesamt)+" IMC problems (" + str(round(100*(imcproblemegesamt-imcproblemeungeloest)/imcproblemegesamt,2))+"%)"
     #Sprache anpassen
     App.get_running_app().root.get_screen("main").imctrainingstartbutton.text = "IMC-Training" if trainingdata['einstellungen']['language'] == "Deutsch" else "IMC Training"
     App.get_running_app().root.get_screen("main").imcproblemstartbutton.text = "IMC-Probleme" if trainingdata['einstellungen']['language'] == "Deutsch" else "IMC Problems"
@@ -310,6 +325,7 @@ def trainingdata_aktualisieren(self):
     App.get_running_app().root.get_screen("einstellungen").verbergeaufgabennummerntext.text = "Verberge IMC-Aufgabennummern" if trainingdata['einstellungen']['language'] == "Deutsch" else "Hide IMC problem numbers"
     App.get_running_app().root.get_screen("einstellungen").seestatusofimcproblemsbutton.text = "Status der IMC-Probleme einsehen/ändern" if trainingdata['einstellungen']['language'] == "Deutsch" else "View/change status of IMC problems"
     App.get_running_app().root.get_screen("einstellungen").seestatusofimcproblemsbutton.text = "Status der IMC-Probleme einsehen/ändern" if trainingdata['einstellungen']['language'] == "Deutsch" else "View/change status of IMC problems"
+    App.get_running_app().root.get_screen("einstellungen").importantinformationbutton.text = "Wichtige Informationen" if trainingdata['einstellungen']['language'] == "Deutsch" else "Important information"
     App.get_running_app().root.get_screen("statusimcprobleme").chooseyeartext.text = "Wähle Jahr" if trainingdata['einstellungen']['language'] == "Deutsch" else "Year"
     App.get_running_app().root.get_screen("statusimcprobleme").choosedaytext.text = "Wähle Tag" if trainingdata['einstellungen']['language'] == "Deutsch" else "Day"
     App.get_running_app().root.get_screen("statusimcprobleme").exercise1text.text = "Aufgabe 1" if trainingdata['einstellungen']['language'] == "Deutsch" else "Problem 1"
