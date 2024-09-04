@@ -44,6 +44,10 @@ class Popup2(Factory.Popup):
 class MainWindow(Screen):
     pass
 
+
+class StatisticWindow(Screen):
+    pass
+
 class LicenceReadmeWindow(Screen):
     def switchacceptchange(self):
         self.continuebutton.disabled = not self.switchaccept.active
@@ -284,11 +288,13 @@ def trainingdata_aktualisieren(self):
                     if i == "u":
                         imcproblemeungeloest += 1
         imcproblemegesamt += 2*int(trainingdata['imc'][jahr]['numberofproblemsperday'])
-    App.get_running_app().root.get_screen("einstellungen").imcstatistik.text = "Bisher "+str(imcproblemegesamt-imcproblemeungeloest)+" von "+str(imcproblemegesamt)+" IMC-Aufgaben gelöst (" + str(round(100*(imcproblemegesamt-imcproblemeungeloest)/imcproblemegesamt,2))+"%)" if trainingdata['einstellungen']['language'] == "Deutsch" else "Solved "+str(imcproblemegesamt-imcproblemeungeloest)+" out of "+str(imcproblemegesamt)+" IMC problems (" + str(round(100*(imcproblemegesamt-imcproblemeungeloest)/imcproblemegesamt,2))+"%)"
+    # App.get_running_app().root.get_screen("einstellungen").imcstatistik.text = "Bisher "+str(imcproblemegesamt-imcproblemeungeloest)+" von "+str(imcproblemegesamt)+" IMC-Aufgaben gelöst (" + str(round(100*(imcproblemegesamt-imcproblemeungeloest)/imcproblemegesamt,2))+"%)" if trainingdata['einstellungen']['language'] == "Deutsch" else "Solved "+str(imcproblemegesamt-imcproblemeungeloest)+" out of "+str(imcproblemegesamt)+" IMC problems (" + str(round(100*(imcproblemegesamt-imcproblemeungeloest)/imcproblemegesamt,2))+"%)" Das war die kleine Statistik in den Einstellungen
+    App.get_running_app().root.get_screen("statisticwindow").statisticlabel1.text = "Bisher "+str(imcproblemegesamt-imcproblemeungeloest)+" von "+str(imcproblemegesamt)+" IMC-Aufgaben gelöst (" + str(round(100*(imcproblemegesamt-imcproblemeungeloest)/imcproblemegesamt,2))+"%)" if trainingdata['einstellungen']['language'] == "Deutsch" else "Solved "+str(imcproblemegesamt-imcproblemeungeloest)+" out of "+str(imcproblemegesamt)+" IMC problems (" + str(round(100*(imcproblemegesamt-imcproblemeungeloest)/imcproblemegesamt,2))+"%)"
     #Sprache anpassen
     App.get_running_app().root.get_screen("main").imctrainingstartbutton.text = "IMC-Training" if trainingdata['einstellungen']['language'] == "Deutsch" else "IMC Training"
     App.get_running_app().root.get_screen("main").imcproblemstartbutton.text = "IMC-Probleme" if trainingdata['einstellungen']['language'] == "Deutsch" else "IMC Problems"
     App.get_running_app().root.get_screen("main").mikestrainingstarteronmainwindow.text = "Mike's Training" if trainingdata['einstellungen']['language'] == "Deutsch" else "Mike's Training"
+    App.get_running_app().root.get_screen("main").statisticstartbutton.text = "Statistik" if trainingdata['einstellungen']['language'] == "Deutsch" else "Statistics"
     App.get_running_app().root.get_screen("main").settingsstartbutton.text = "Einstellungen" if trainingdata['einstellungen']['language'] == "Deutsch" else "Settings"
     App.get_running_app().root.get_screen("imctraining").textnextexercise.text = "Nächste IMC-Aufgabe:" if trainingdata['einstellungen']['language'] == "Deutsch" else "Next IMC problem:"
     App.get_running_app().root.get_screen("imctraining").solvedandnextexercise.text = "Aufgabe gelöst, neue Aufgabe" if trainingdata['einstellungen']['language'] == "Deutsch" else "Problem solved, new problem"

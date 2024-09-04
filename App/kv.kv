@@ -26,6 +26,7 @@ WindowManager:
     MikeRandomExerciseWindow:
     EinstellungsWindow:
     StatusimcproblemeWindow:
+    StatisticWindow:
 
 <MainWindow>:
     name: "main"
@@ -33,6 +34,7 @@ WindowManager:
     imctrainingstartbutton: imctrainingstartbutton
     imcproblemstartbutton: imcproblemstartbutton
     settingsstartbutton: settingsstartbutton
+    statisticstartbutton: statisticstartbutton
     GridLayout:
         cols: 1
         Button:
@@ -65,6 +67,14 @@ WindowManager:
                 app.root.current = "mikerandom"
                 root.manager.transition.direction = "left"
                 app.root.get_screen("mikerandom").exercise_label.text = "-- / --"
+        Button:
+            text: "Statistik"
+            id: statisticstartbutton
+            font_size: 70
+            on_release:
+                app.root.current = "statisticwindow"
+                root.manager.transition.direction = "left"
+                pass
         Button:
             id: settingsstartbutton
             text: "Einstellungen"
@@ -195,7 +205,12 @@ WindowManager:
             on_release:
                 root.dismiss()
 
-
+<StatisticWindow>:
+    name: "statisticwindow"
+    statisticlabel1: statisticlabel1
+    Label:
+        id: statisticlabel1
+        text: "tba"
 
 <IMCShowWindow>:
     name: "imcshow"
@@ -279,7 +294,7 @@ WindowManager:
     switchonlynewimcexersices: switchonlynewimcexersices
     switchusemikestraining: switchusemikestraining
     switchhideexercisenumber: switchhideexercisenumber
-    imcstatistik: imcstatistik
+    # imcstatistik: imcstatistik
     randomcounterlabel: randomcounterlabel
     miketrainingtopicspin: miketrainingtopicspin
     miketrainingtopicspinlabel: miketrainingtopicspinlabel
@@ -346,9 +361,9 @@ WindowManager:
             on_release:
                 app.root.current = "statusimcprobleme"
                 root.manager.transition.direction = "left"
-        Label:
-            id: imcstatistik
-            text: ""
+        # Label:
+        #     id: imcstatistik
+        #     text: ""
         Label:
             id: randomcounterlabel
             text: ""
