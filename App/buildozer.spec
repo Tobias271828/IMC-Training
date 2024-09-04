@@ -29,7 +29,7 @@ source.include_exts = py,png,jpg,kv,atlas,txt,md
 #source.exclude_patterns = license,images/*/*.jpg
 
 # (str) Application versioning (method 1)
-version = 2.3
+version = 2.4
 
 # (str) Application versioning (method 2)
 # version.regex = __version__ = ['"](.*)['"]
@@ -67,7 +67,8 @@ orientation = portrait
 osx.python_version = 3
 
 # Kivy version to use
-osx.kivy_version = 1.9.1
+osx.kivy_version = 2.3.0
+
 
 #
 # Android specific
