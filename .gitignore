@@ -3,4 +3,4 @@
 *.gz
 App/imc-training-data.json
 App/.buildozer
-Flutter_App
+imctraining
