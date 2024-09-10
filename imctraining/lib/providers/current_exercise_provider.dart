@@ -30,6 +30,7 @@ class CurrentExerciseProvider extends ChangeNotifier{
   int aufgaben4gesamt = 0;
   int aufgaben5gesamt = 0;
   int aufgaben6gesamt = 0;
+  bool zeigeaufgabennummern = true;
   
   
 
@@ -45,6 +46,7 @@ class CurrentExerciseProvider extends ChangeNotifier{
     zeigeaufgaben4 = prefs.getBool('zeigeaufgaben4') ?? false;
     zeigeaufgaben5 = prefs.getBool('zeigeaufgaben5') ?? false;
     zeigeaufgaben6 = prefs.getBool('zeigeaufgaben6') ?? false;
+    zeigeaufgabennummern = prefs.getBool('zeigeaufgabennummern') ?? true;
     
 
     if (jahr != 0 && tag != 0 && aufgabe != 0){
@@ -79,6 +81,12 @@ class CurrentExerciseProvider extends ChangeNotifier{
       }
   }
 
+  Future<void> wechselezeigeaufgabennummern() async{
+    zeigeaufgabennummern = !zeigeaufgabennummern;
+    notifyListeners();
+    speichereeinstellungen();
+  }
+
   Future<void> aenderezeigeaufgabenbestimmertnummer(int aufgabennummer) async {
     switch (aufgabennummer) {
       case 1: zeigeaufgaben1 = !zeigeaufgaben1;
@@ -88,7 +96,6 @@ class CurrentExerciseProvider extends ChangeNotifier{
       case 5: zeigeaufgaben5 = !zeigeaufgaben5;
       case 6: zeigeaufgaben6 = !zeigeaufgaben6;
     }
-    berechnestatistiken();
     notifyListeners();
     speichereeinstellungen();
   }
@@ -105,6 +112,7 @@ class CurrentExerciseProvider extends ChangeNotifier{
     prefs.setBool('zeigeaufgaben4', zeigeaufgaben4);
     prefs.setBool('zeigeaufgaben5', zeigeaufgaben5);
     prefs.setBool('zeigeaufgaben6', zeigeaufgaben6);
+    prefs.setBool('zeigeaufgabennummern', zeigeaufgabennummern);
   }
 
   Future<void> neuezufaelligeaufgabe() async {

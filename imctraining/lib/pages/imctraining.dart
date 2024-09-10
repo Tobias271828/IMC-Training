@@ -18,7 +18,7 @@ class Imctraining extends StatelessWidget {
               Container(
                 height: 50,
               ),
-              Text((context.watch<CurrentExerciseProvider>().aufgabenichtleer)?'${context.watch<CurrentExerciseProvider>().jahr} / ${context.watch<CurrentExerciseProvider>().tag} / ${context.watch<CurrentExerciseProvider>().aufgabe}':'- / - / -'),
+              Text((context.watch<CurrentExerciseProvider>().zeigeaufgabennummern)?((context.watch<CurrentExerciseProvider>().aufgabenichtleer)?'${context.watch<CurrentExerciseProvider>().jahr} / ${context.watch<CurrentExerciseProvider>().tag} / ${context.watch<CurrentExerciseProvider>().aufgabe}':'- / - / -'):((context.watch<CurrentExerciseProvider>().aufgabenichtleer)?'${context.watch<CurrentExerciseProvider>().jahr} / ${context.watch<CurrentExerciseProvider>().tag}':'- / -')),
               Image(image: AssetImage((Brightness.light == MediaQuery.of(context).platformBrightness)?'${context.watch<CurrentExerciseProvider>().linkaktuellesaufgabenbildohneendung}.jpg':'${context.watch<CurrentExerciseProvider>().linkaktuellesaufgabenbildohneendung}d.jpg')),
             ],
           ),
@@ -56,7 +56,7 @@ class Imctraining extends StatelessWidget {
       )
       
       
-       
+      
         /* ListView.builder(
           itemCount: 15,
           itemBuilder: (context,index) => ListTile(

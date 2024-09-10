@@ -31,6 +31,16 @@ class _SettingsState extends State<Settings> {
               ),
             ],
           ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text("Zeige Aufgabennummern"),
+              Switch(
+                value: context.watch<CurrentExerciseProvider>().zeigeaufgabennummern,
+                onChanged: (bool value){context.read<CurrentExerciseProvider>().wechselezeigeaufgabennummern();}
+              )
+            ],
+          ),
           Container(height: 20,),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
