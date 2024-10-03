@@ -3,7 +3,7 @@
 *.gz
 App/imc-training-data.json
 App/.buildozer
-App/bin
+#App/bin
 imctraining/android
 imctraining/build
 imctraining/ios
