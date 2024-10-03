@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:imctraining/providers/current_exercise_provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 
 
@@ -55,7 +56,7 @@ class _ShowimcproblemsState extends State<Showimcproblems> {
               DropdownMenu(
                 width: 110,
                 menuHeight: 2*(MediaQuery.of(context).size.height / 3),
-                helperText: "Jahr",
+                helperText: AppLocalizations.of(context)!.year,
                 onSelected: (jahrauswahlselected){
                   if (jahrauswahlselected != null){
                     setState(() {
@@ -108,7 +109,7 @@ class _ShowimcproblemsState extends State<Showimcproblems> {
                 ],
               ),
               DropdownMenu(
-                helperText: "Tag",
+                helperText: AppLocalizations.of(context)!.day,
                 width: 80,
                 onSelected: (tagauswahlselected){
                   if(tagauswahlselected != null){
@@ -123,7 +124,7 @@ class _ShowimcproblemsState extends State<Showimcproblems> {
                 ],
               ),
               DropdownMenu(
-                helperText: "Aufgabe",
+                helperText: AppLocalizations.of(context)!.problem,
                 width: 80,
                 onSelected: (aufgabenauswahlselected){
                   if(aufgabenauswahlselected != null){
@@ -148,7 +149,7 @@ class _ShowimcproblemsState extends State<Showimcproblems> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text('Aufgabe gelöst'),
+                Text(AppLocalizations.of(context)!.problemsolved),
                 Switch(
                   value: aufgabeanngezeigt ? 's' == context.watch<CurrentExerciseProvider>().imcaufgabendata[(jahrauswahl-1994)*2+tagauswahl-1].substring(aufgabenauswahl-1,aufgabenauswahl) : false,
                   onChanged: aufgabeanngezeigt ? (bool value){

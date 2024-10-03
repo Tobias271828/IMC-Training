@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:imctraining/pages/showimcproblems.dart';
 import 'package:imctraining/pages/imctraining.dart';
 import 'package:imctraining/pages/settings.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 
 
@@ -15,7 +16,7 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  int _selectedIndex = 0;
+  int currentPageIndex = 0;
   bool vollbildmodus = false;
 
 
@@ -26,11 +27,6 @@ class _HomepageState extends State<Homepage> {
     context.read<FullscreenProvider>().initialisieren();
   }
 
-  void _navigateBottomBar(int index){
-    setState(() {
-       _selectedIndex = index;
-    });
-  }
 
   final List _pages = [
     const Imctraining(),
@@ -45,8 +41,34 @@ class _HomepageState extends State<Homepage> {
     return Scaffold(
       /*appBar: AppBar(
         title: Text("Homepage"),),*/
-      body: _pages[_selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
+      body: _pages[currentPageIndex],
+      bottomNavigationBar: NavigationBar(
+        onDestinationSelected: (int index){
+          setState(() {
+            currentPageIndex = index;
+          });
+        },
+        //indicatorColor: Colors.amber(),
+        selectedIndex: currentPageIndex,
+        destinations: <Widget>[
+          NavigationDestination(
+            selectedIcon: const Icon(Icons.trending_up),
+            icon: const Icon(Icons.trending_up_outlined),
+            label: AppLocalizations.of(context)!.imctraining,
+          ),
+          NavigationDestination(
+            selectedIcon: const Icon(Icons.local_library),
+            icon: const Icon(Icons.local_library_outlined),
+            label: AppLocalizations.of(context)!.imcproblems,
+          ),
+          NavigationDestination(
+            selectedIcon: const Icon(Icons.settings),
+            icon: const Icon(Icons.settings_outlined),
+            label: AppLocalizations.of(context)!.settings,//'Einstellungen',
+          ),
+        ],
+      ),
+      /*bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _navigateBottomBar,
         items: const [
@@ -63,9 +85,9 @@ class _HomepageState extends State<Homepage> {
         //Einstellungen
         BottomNavigationBarItem(
           icon: Icon(Icons.settings),
-          label: 'Einstellungen'
+          label: AppLocalizations.of(context)!.fullscreen,//'Einstellungen',
         ),
-      ]),
+      ]),*/
     );
   }
 }

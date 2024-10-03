@@ -1,0 +1,14 @@
+{
+    "imctraining": "IMC-Training",
+    "imcproblems": "IMC-Problems",
+    "settings": "Settings",
+    "problemmarkedassolved": "Problem marked as solved",
+    "problemsolved": "Problem solved",
+    "year" : "Year",
+    "day" : "Day",
+    "problem": "Problem",
+    "fullscreen": "Full screen",
+    "showproblemnumbers": "Show problem numbers",
+    "showproblems": "Show problems",
+    "solved": "solved"
+}

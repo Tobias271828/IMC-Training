@@ -1,0 +1,14 @@
+{
+    "imctraining": "IMC-Training",
+    "imcproblems": "IMC-Aufgaben",
+    "settings": "Einstellungen",
+    "problemmarkedassolved": "Aufgabe als gelöst markiert",
+    "problemsolved": "Aufgabe gelöst",
+    "year" : "Jahr",
+    "day" : "Tag",
+    "problem": "Aufgabe",
+    "fullscreen": "Vollbild",
+    "showproblemnumbers": "Zeige Aufgabennummern",
+    "showproblems": "Zeige Aufgaben",
+    "solved": "gelöst"
+}

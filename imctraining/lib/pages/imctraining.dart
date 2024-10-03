@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:imctraining/providers/current_exercise_provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 
 class Imctraining extends StatelessWidget {
@@ -30,8 +31,7 @@ class Imctraining extends StatelessWidget {
                   FilledButton.tonal(
                     onPressed: context.watch<CurrentExerciseProvider>().aufgabenichtleer ? (){
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text('Aufgabe als gelöst markiert'))
-                      );
+                        SnackBar(content: Text(AppLocalizations.of(context)!.problemmarkedassolved)));
                       context.read<CurrentExerciseProvider>().markiereaktuelleaufgabealsgeloestundneueaufgabe();
                     }:null,
                     child: const Icon(Icons.done),
