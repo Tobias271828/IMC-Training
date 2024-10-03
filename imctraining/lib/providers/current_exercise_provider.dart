@@ -31,6 +31,7 @@ class CurrentExerciseProvider extends ChangeNotifier{
   int aufgaben5gesamt = 0;
   int aufgaben6gesamt = 0;
   bool zeigeaufgabennummern = true;
+  //bool eulaakzeptiert = false;
   
   
 
@@ -57,6 +58,18 @@ class CurrentExerciseProvider extends ChangeNotifier{
       linkaktuellesaufgabenbildohneendung = 'images/empty';
     }
   }
+
+  /*Future<void> ladeeulaakzeptiert() async {
+    final prefs = await SharedPreferences.getInstance();
+    eulaakzeptiert = prefs.getBool('eula') ?? false;
+  }
+
+  Future<void> akzeptiereeula() async {
+    final prefs = await SharedPreferences.getInstance();
+    eulaakzeptiert = true;
+    prefs.setBool('eula', eulaakzeptiert);
+  }*/
+
 
   Future<void> berechnestatistiken() async{
     aufgaben1geloest = 0;
@@ -200,5 +213,6 @@ class CurrentExerciseProvider extends ChangeNotifier{
     await ladeeinstellungen();
     berechnestatistiken();
     notifyListeners();
+    //await ladeeulaakzeptiert();
   }
 }

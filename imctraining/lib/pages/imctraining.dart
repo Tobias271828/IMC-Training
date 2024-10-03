@@ -39,6 +39,19 @@ class Imctraining extends StatelessWidget {
                   FilledButton.tonal(
                     onPressed: (){
                       context.read<CurrentExerciseProvider>().neuezufaelligeaufgabe();
+                      //BEGIN DELETE
+                      /*showDialog<String>(
+                        context: context,
+                        builder: (BuildContext context) => AlertDialog(
+                          title: Text("hi"),
+                          content: Text("Moin"),
+                          actions: <Widget>[
+                            TextButton(onPressed: () => Navigator.pop(context,"Nein"), child: Text("Nein")),
+                            TextButton(onPressed: () => Navigator.pop(context,"Ja"), child: Text("Ja")),
+                          ],
+                        ),
+                      );*/
+                      //END DELETE
                     },
                     child: const Icon(
                       Icons.skip_next
