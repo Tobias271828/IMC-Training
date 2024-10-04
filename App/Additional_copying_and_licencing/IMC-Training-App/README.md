@@ -1,4 +1,4 @@
-This app is intended for training for the IMC (International Mathematics Competition for University Students). But it also serves just to have fun with old IMC problems :)
+This app is intended for training for the IMC (International Mathematics Competition for University Students). But it also serves just to have fun with old IMC problems. :)
 
 Features include:
 - Suggesting IMC problems for your training
@@ -10,7 +10,7 @@ For more information about the IMC problems and the IMC in general, please look 
 
 The app supports English, German, Dutch, Spanish and Swedish.
 
-You can download the app from the Google Play Store. Alternatively, you can build the app from source yourself.
+You can download the app from the Google Play Store. Alternatively, you can build the app from source by yourself.
 
 This app is Open Source and licenced under the GPL-3.0-or-later licence. The source code can be found on GitHub (https://github.com/Tobias271828/IMC-Training/). This app is written in flutter and dart and more (the licensing and copyright notices can be found in the imctraining/licenses.json file in the GitHub repository (https://github.com/Tobias271828/IMC-Training/). Many thanks to the developers of those projects!
 
