@@ -14,7 +14,7 @@ You can download the app from the Google Play Store. Alternatively, you can buil
 
 This app is Open Source and licenced under the GPL-3.0-or-later licence. The source code can be found on GitHub (https://github.com/Tobias271828/IMC-Training/). This app is written in flutter and dart and more (the licensing and copyright notices can be found in the imctraining/licenses.json file in the GitHub repository (https://github.com/Tobias271828/IMC-Training/). Many thanks to the developers of those projects!
 
-Many thanks to Jakob Feldner, Jonathan Frey and Barbara Roos for their great support in LaTeX-typing, but also Bug-testing and suggesting new functionalities for the App!
+Many thanks to Jakob Feldner, Jonathan Frey, Veronika Körber and Barbara Roos for their great support in LaTeX-typing, but also Bug-testing and suggesting new functionalities for the App!
 
 If you want to report a bug or a typo or if you want to provide a translation of the app into another language, please contact me via email, please write an email to imctrainingapp.g8199@slmails.com (to prevent spam, this is an email alias, that is linked to my main email inbox).
 

@@ -60,6 +60,9 @@ class MyApp extends StatelessWidget {
         supportedLocales: const [
           Locale('en'),
           Locale('de'),
+          Locale('nl'),
+          Locale('sv'),
+          Locale('es'),
         ],//Nach jedem Veraendern oder Hinzufuegen von Uebersetzungen und nach jedem Hinzufuegen einer neuen Sprache den Befehl flutter pub get ausfuehren
         // debugShowCheckedModeBanner: false,
         home: const Homepage(),
