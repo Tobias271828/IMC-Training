@@ -130,7 +130,7 @@ class _ShowimcproblemsState extends State<Showimcproblems> {
               ),
               DropdownMenu(
                 helperText: AppLocalizations.of(context)!.day,
-                width: 80,
+                width: 90,
                 onSelected: (tagauswahlselected){
                   if(tagauswahlselected != null){
                     setState(() {
@@ -145,7 +145,7 @@ class _ShowimcproblemsState extends State<Showimcproblems> {
               ),
               DropdownMenu(
                 helperText: AppLocalizations.of(context)!.problem,
-                width: 80,
+                width: 90,
                 onSelected: (aufgabenauswahlselected){
                   if(aufgabenauswahlselected != null){
                     setState(() {

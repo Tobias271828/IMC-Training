@@ -8,7 +8,7 @@
     "day" : "Dag",
     "problem": "Opgave",
     "fullscreen": "Volledig scherm",
-    "showproblemnumbers": "Opgavenummers laten zien",
+    "showproblemnumbers": "Opgavenummers weergeven",
     "showproblems": "Opgaven weergeven",
-    "solved": "opgelost"
+    "solved": "klaar"
 }

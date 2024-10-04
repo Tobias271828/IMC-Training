@@ -8,7 +8,7 @@ Features include:
 
 For more information about the IMC problems and the IMC in general, please look at the IMC website (https://www.imc-math.org.uk/).
 
-The app supports English and German.
+The app supports English, German, Dutch, Spanish and Swedish.
 
 You can download the app from the Google Play Store. Alternatively, you can build the app from source yourself.
 
