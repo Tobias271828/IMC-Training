@@ -1,0 +1,14 @@
+{
+    "imctraining": "IMC-Träning",
+    "imcproblems": "IMC-uppgifter",
+    "settings": "Inställningar",
+    "problemmarkedassolved": "Markera uppgiften som löst",
+    "problemsolved": "Uppgiften löst",
+    "year" : "År",
+    "day" : "Dag",
+    "problem": "Uppgift",
+    "fullscreen": "Helskärm",
+    "showproblemnumbers": "Vis uppgiftsnumren",
+    "showproblems": "Vis problemen",
+    "solved": "löst"
+}

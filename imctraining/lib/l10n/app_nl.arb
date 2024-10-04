@@ -1,0 +1,14 @@
+{
+    "imctraining": "IMC-Training",
+    "imcproblems": "IMC-Opgaven",
+    "settings": "Instellingen",
+    "problemmarkedassolved": "Opgave gemarkeerd als opgelost",
+    "problemsolved": "Opgave opgelost",
+    "year" : "Jaar",
+    "day" : "Dag",
+    "problem": "Opgave",
+    "fullscreen": "Volledig scherm",
+    "showproblemnumbers": "Opgavenummers laten zien",
+    "showproblems": "Opgaven weergeven",
+    "solved": "opgelost"
+}
