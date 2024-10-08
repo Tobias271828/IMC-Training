@@ -1,0 +1,14 @@
+{
+    "imctraining": "Режим тренинга",
+    "imcproblems": "Задачи IMC",
+    "settings": "Настройки",
+    "problemmarkedassolved": "Пометить задачу как решенную",
+    "problemsolved": "Задача решена",
+    "year" : "Год",
+    "day" : "День",
+    "problem": "Задача",
+    "fullscreen": "Полный экран",
+    "showproblemnumbers": "Показать задачи",
+    "showproblems": "Показать задачи",
+    "solved": "решено"
+}

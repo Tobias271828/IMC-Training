@@ -63,6 +63,7 @@ class MyApp extends StatelessWidget {
           Locale('nl'),
           Locale('sv'),
           Locale('es'),
+          Locale('ru'),
         ],//Nach jedem Veraendern oder Hinzufuegen von Uebersetzungen und nach jedem Hinzufuegen einer neuen Sprache den Befehl flutter gen-l10n und danach flutter pub get ausfuehren
         // debugShowCheckedModeBanner: false,
         home: const Homepage(),

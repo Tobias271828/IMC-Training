@@ -68,8 +68,11 @@ class _ShowimcproblemsState extends State<Showimcproblems> {
     ladeneuesaufgabenbild();
     return Scaffold(
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,//.center,
         children: [
+          Container(
+            height: 25,
+          ),
           Expanded(child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -130,7 +133,7 @@ class _ShowimcproblemsState extends State<Showimcproblems> {
               ),
               DropdownMenu(
                 helperText: AppLocalizations.of(context)!.day,
-                width: 90,
+                width: 90 ,
                 onSelected: (tagauswahlselected){
                   if(tagauswahlselected != null){
                     setState(() {
