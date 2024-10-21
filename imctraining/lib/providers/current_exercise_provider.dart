@@ -58,9 +58,9 @@ class CurrentExerciseProvider extends ChangeNotifier{
   Future<void> ladeeinstellungen() async {
     final prefs = await SharedPreferences.getInstance();
     imcaufgabendata = prefs.getStringList('imcaufgabendata') ?? ['uuuuuu','uuuuuu','uuuuuu','uuuuuu','uuuuuu','uuuuuu','uuuuuu','uuuuuu','uuuuuu','uuuuuu','uuuuuu','uuuuuu','uuuuuu','uuuuuu','uuuuuu','uuuuuu','uuuuuu','uuuuuu','uuuuuu','uuuuuu','uuuuuu','uuuuuu','uuuuuu','uuuuuu','uuuuuu','uuuuuu','uuuuuu','uuuuuu','uuuuuu','uuuuuu','uuuuu','uuuuu','uuuuu','uuuuu','uuuuu','uuuuu','uuuuu','uuuuu','uuuuu','uuuuu','uuuuu','uuuuu','uuuuu','uuuuu','uuuuu','uuuuu','uuuuu','uuuuu','uuuuu','uuuuu','uuuuu','uuuuu','uuuu','uuuu','uuuu','uuuu','uuuu','uuuu','uuuuu','uuuuu','uuuuu','uuuuu'];
-    jahr = prefs.getInt('aktuelleaufgabejahr') ?? 0;
-    tag = prefs.getInt('aktuelleaufgabetag') ?? 0;
-    aufgabe = prefs.getInt('aktuelleaufgabeaufgabe') ?? 0;
+    jahr = prefs.getInt('aktuelleaufgabejahr') ?? 2024;
+    tag = prefs.getInt('aktuelleaufgabetag') ?? 1;
+    aufgabe = prefs.getInt('aktuelleaufgabeaufgabe') ?? 1;
     zeigeaufgaben1 = prefs.getBool('zeigeaufgaben1') ?? true;
     zeigeaufgaben2 = prefs.getBool('zeigeaufgaben2') ?? false;
     zeigeaufgaben3 = prefs.getBool('zeigeaufgaben3') ?? false;
