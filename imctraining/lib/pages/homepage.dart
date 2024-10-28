@@ -131,26 +131,6 @@ class _HomepageState extends State<Homepage> {
             ),
           ],
         ),
-        /*bottomNavigationBar: BottomNavigationBar(
-          currentIndex: _selectedIndex,
-          onTap: _navigateBottomBar,
-          items: const [
-          //Training
-          BottomNavigationBarItem(
-            icon: Icon(Icons.trending_up),
-            label: 'IMC-Training'
-          ),
-          //Zeigen
-          BottomNavigationBarItem(
-            icon: Icon(Icons.local_library),
-            label: 'IMC-Probleme'
-          ),
-          //Einstellungen
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: AppLocalizations.of(context)!.fullscreen,//'Einstellungen',
-          ),
-        ]),*/
       )
     );
     

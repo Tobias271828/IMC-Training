@@ -12,5 +12,13 @@
     "showproblems": "Opgaven weergeven",
     "solved": "klaar",
     "problemsfromaspecifictopic": "Selecteer opgavenonderwerp",
-    "topic": "Onderwerp"
+    "topic": "Onderwerp",
+    "numbertheory": "Getaltheorie",
+    "combinatorics": "Combinatoriek",
+    "linearalgebra": "Lineaire algebra",
+    "algebra": "Algebra",
+    "realanalysis": "Reële analyse",
+    "complexanalysis": "Functietheorie",
+    "polynomials": "Polynomen",
+    "geometry": "Meetkunde"
 }

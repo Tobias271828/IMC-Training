@@ -12,5 +12,13 @@
     "showproblems": "Zeige Aufgaben",
     "solved": "gelöst",
     "problemsfromaspecifictopic": "Aufgabenthema wählen",
-    "topic": "Themengebiet"
+    "topic": "Themengebiet",
+    "numbertheory": "Zahlentheorie",
+    "combinatorics": "Kombinatorik",
+    "linearalgebra": "Lienare Algebra",
+    "algebra": "Algebra",
+    "realanalysis": "Reelle Analysis",
+    "complexanalysis": "Funktionentheorie",
+    "polynomials": "Polynome",
+    "geometry": "Geometrie"
 }

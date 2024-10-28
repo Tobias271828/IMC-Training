@@ -12,5 +12,13 @@
     "showproblems": "Muestra los problemas",
     "solved": "solvado",
     "problemsfromaspecifictopic": "Problems from a specific topic",
-    "topic": "Topic"
+    "topic": "Topic",
+    "numbertheory": "Number Theory",
+    "combinatorics": "Combinatorics",
+    "linearalgebra": "Linear Algebra",
+    "algebra": "Algebra",
+    "realanalysis": "Real Analysis",
+    "complexanalysis": "Complex Analysis",
+    "polynomials": "Polynomials",
+    "geometry": "Geometry"
 }

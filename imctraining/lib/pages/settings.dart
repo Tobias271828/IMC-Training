@@ -130,15 +130,15 @@ class _SettingsState extends State<Settings> {
                 });*/
               }
             },
-            dropdownMenuEntries: const <DropdownMenuEntry>[
-              DropdownMenuEntry(value: 'n', label: 'Number Theory'),
-              DropdownMenuEntry(value: 'k', label: 'Combinatorics'),
-              DropdownMenuEntry(value: 'l', label: 'Linear Algebra'),
-              DropdownMenuEntry(value: 'a', label: 'Algebra'),
-              DropdownMenuEntry(value: 'r', label: 'Real Analysis'),
-              DropdownMenuEntry(value: 'c', label: 'Complex Analysis'),
-              DropdownMenuEntry(value: 'p', label: 'Polynomials'),
-              DropdownMenuEntry(value: 'g', label: 'Geometry'),
+            dropdownMenuEntries: <DropdownMenuEntry>[
+              DropdownMenuEntry(value: 'n', label: AppLocalizations.of(context)!.numbertheory),
+              DropdownMenuEntry(value: 'k', label: AppLocalizations.of(context)!.combinatorics),
+              DropdownMenuEntry(value: 'l', label: AppLocalizations.of(context)!.linearalgebra),
+              DropdownMenuEntry(value: 'a', label: AppLocalizations.of(context)!.algebra),
+              DropdownMenuEntry(value: 'r', label: AppLocalizations.of(context)!.realanalysis),
+              DropdownMenuEntry(value: 'c', label: AppLocalizations.of(context)!.complexanalysis),
+              DropdownMenuEntry(value: 'p', label: AppLocalizations.of(context)!.polynomials),
+              DropdownMenuEntry(value: 'g', label: AppLocalizations.of(context)!.geometry),
             ],
           ),
           /*Row(
