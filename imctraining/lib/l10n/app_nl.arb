@@ -10,5 +10,7 @@
     "fullscreen": "Volledig scherm",
     "showproblemnumbers": "Opgavenummers weergeven",
     "showproblems": "Opgaven weergeven",
-    "solved": "klaar"
+    "solved": "klaar",
+    "problemsfromaspecifictopic": "Selecteer opgavenonderwerp",
+    "topic": "Onderwerp"
 }

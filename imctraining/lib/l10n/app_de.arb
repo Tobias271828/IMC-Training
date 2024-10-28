@@ -10,5 +10,7 @@
     "fullscreen": "Vollbild",
     "showproblemnumbers": "Zeige Aufgabennummern",
     "showproblems": "Zeige Aufgaben",
-    "solved": "gelöst"
+    "solved": "gelöst",
+    "problemsfromaspecifictopic": "Aufgabenthema wählen",
+    "topic": "Themengebiet"
 }

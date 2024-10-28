@@ -51,7 +51,138 @@ class CurrentExerciseProvider extends ChangeNotifier{
   int aufgaben5gesamt = 0;
   int aufgaben6gesamt = 0;
   bool zeigeaufgabennummern = true;
-  //bool eulaakzeptiert = false;
+  bool trainierenurspeziellesthema = false;
+  String trainingsthema = 'n';
+
+  
+  //Aufgabenzuordnung zu Themengebieten: TBA
+  static const aufgabenthemen = [
+    [ // 1994
+      ['l','r','k','l','r','r'], // Tag 1
+      ['r','r','r','l','g','r'] // Tag 2
+    ],
+    [ // 1995
+      ['','','','','',''], // Tag 1
+      ['','','','','',''] // Tag 2
+    ],
+    [ // 1996
+      ['','','','','',''], // Tag 1
+      ['','','','','',''] // Tag 2
+    ],
+    [ // 1997
+      ['','','','','',''], // Tag 1
+      ['','','','','',''] // Tag 2
+    ],
+    [ // 1998
+      ['','','','','',''], // Tag 1
+      ['','','','','',''] // Tag 2
+    ],
+    [ // 1999
+      ['','','','','',''], // Tag 1
+      ['','','','','',''] // Tag 2
+    ],
+    [ // 2000
+      ['','','','','',''], // Tag 1
+      ['','','','','',''] // Tag 2
+    ],
+    [ // 2001
+      ['','','','','',''], // Tag 1
+      ['','','','','',''] // Tag 2
+    ],
+    [ // 2002
+      ['','','','','',''], // Tag 1
+      ['','','','','',''] // Tag 2
+    ],
+    [ // 2003
+      ['','','','','',''], // Tag 1
+      ['','','','','',''] // Tag 2
+    ],
+    [ // 2004
+      ['','','','','',''], // Tag 1
+      ['','','','','',''] // Tag 2
+    ],
+    [ // 2005
+      ['','','','','',''], // Tag 1
+      ['','','','','',''] // Tag 2
+    ],
+    [ // 2006
+      ['','','','','',''], // Tag 1
+      ['','','','','',''] // Tag 2
+    ],
+    [ // 2007
+      ['','','','','',''], // Tag 1
+      ['','','','','',''] // Tag 2
+    ],
+    [ // 2008
+      ['','','','','',''], // Tag 1
+      ['','','','','',''] // Tag 2
+    ],
+    [ // 2009
+      ['','','','',''], // Tag 1
+      ['','','','',''] // Tag 2
+    ],
+    [ // 2010
+      ['','','','',''], // Tag 1
+      ['','','','',''] // Tag 2
+    ],
+    [ // 2011
+      ['','','','',''], // Tag 1
+      ['','','','',''] // Tag 2
+    ],
+    [ // 2012
+      ['','','','',''], // Tag 1
+      ['','','','',''] // Tag 2
+    ],
+    [ // 2013
+      ['','','','',''], // Tag 1
+      ['','','','',''] // Tag 2
+    ],
+    [ // 2014
+      ['','','','',''], // Tag 1
+      ['','','','',''] // Tag 2
+    ],
+    [ // 2015
+      ['','','','',''], // Tag 1
+      ['','','','',''] // Tag 2
+    ],
+    [ // 2016
+      ['','','','',''], // Tag 1
+      ['','','','',''] // Tag 2
+    ],
+    [ // 2017
+      ['','','','',''], // Tag 1
+      ['','','','',''] // Tag 2
+    ],
+    [ // 2018
+      ['','','','',''], // Tag 1
+      ['','','','',''] // Tag 2
+    ],
+    [ // 2019
+      ['','','','',''], // Tag 1
+      ['','','','',''] // Tag 2
+    ],
+    [ // 2020
+      ['','','',''], // Tag 1
+      ['','','',''] // Tag 2
+    ],
+    [ // 2021
+      ['','','',''], // Tag 1
+      ['','','',''] // Tag 2
+    ],
+    [ // 2022
+      ['','','',''], // Tag 1
+      ['','','',''] // Tag 2
+    ],
+    [ // 2023
+      ['','','','',''], // Tag 1
+      ['kl','','','',''] // Tag 2
+    ],
+    [ // 2024
+      ['','','','',''], // Tag 1
+      ['','','','',''] // Tag 2
+    ]
+  ];
+
   
   
 
@@ -68,8 +199,9 @@ class CurrentExerciseProvider extends ChangeNotifier{
     zeigeaufgaben5 = prefs.getBool('zeigeaufgaben5') ?? false;
     zeigeaufgaben6 = prefs.getBool('zeigeaufgaben6') ?? false;
     zeigeaufgabennummern = prefs.getBool('zeigeaufgabennummern') ?? true;
+    trainierenurspeziellesthema = prefs.getBool('trainierenurspeziellesthema') ?? false;
+    trainingsthema = prefs.getString('trainingsthema') ?? 'n';
     
-
     if (jahr != 0 && tag != 0 && aufgabe != 0){
       aufgabenichtleer = true;
       linkaktuellesaufgabenbildohneendung = 'images/$jahr/$tag/$aufgabe';
@@ -79,16 +211,6 @@ class CurrentExerciseProvider extends ChangeNotifier{
     }
   }
 
-  /*Future<void> ladeeulaakzeptiert() async {
-    final prefs = await SharedPreferences.getInstance();
-    eulaakzeptiert = prefs.getBool('eula') ?? false;
-  }
-
-  Future<void> akzeptiereeula() async {
-    final prefs = await SharedPreferences.getInstance();
-    eulaakzeptiert = true;
-    prefs.setBool('eula', eulaakzeptiert);
-  }*/
 
 
   Future<void> berechnestatistiken() async{
@@ -120,6 +242,18 @@ class CurrentExerciseProvider extends ChangeNotifier{
     speichereeinstellungen();
   }
 
+  Future<void> wechseletrainierenurspeziellesthema() async{
+    trainierenurspeziellesthema = !trainierenurspeziellesthema;
+    notifyListeners();
+    speichereeinstellungen();
+  }
+  
+  Future<void> wechseletrainingsthema(String thema) async{
+    trainingsthema = thema;
+    notifyListeners();
+    speichereeinstellungen();
+  }
+
   Future<void> aenderezeigeaufgabenbestimmertnummer(int aufgabennummer) async {
     switch (aufgabennummer) {
       case 1: zeigeaufgaben1 = !zeigeaufgaben1;
@@ -146,6 +280,8 @@ class CurrentExerciseProvider extends ChangeNotifier{
     prefs.setBool('zeigeaufgaben5', zeigeaufgaben5);
     prefs.setBool('zeigeaufgaben6', zeigeaufgaben6);
     prefs.setBool('zeigeaufgabennummern', zeigeaufgabennummern);
+    prefs.setBool('trainierenurspeziellesthema', trainierenurspeziellesthema);
+    prefs.setString('trainingsthema', trainingsthema);
   }
 
   Future<void> neuezufaelligeaufgabe() async {
@@ -153,31 +289,63 @@ class CurrentExerciseProvider extends ChangeNotifier{
     int anzahlungeloesteraufgaben = 0;
     if(zeigeaufgaben1 || zeigeaufgaben2 || zeigeaufgaben3 || zeigeaufgaben4 || zeigeaufgaben5 || zeigeaufgaben6){
       //neue Aufgabe
-      jahr = 0;
-      tag = 0;
-      aufgabe = 0;
-      for(int i = 0; i< (imcaufgabendata.length); i++){
-        if (zeigeaufgaben1 && imcaufgabendata[i].substring(0,1) == 'u'){anzahlungeloesteraufgaben++;}
-        if (zeigeaufgaben2 && imcaufgabendata[i].substring(1,2) == 'u'){anzahlungeloesteraufgaben++;}
-        if (zeigeaufgaben3 && imcaufgabendata[i].substring(2,3) == 'u'){anzahlungeloesteraufgaben++;}
-        if (zeigeaufgaben4 && imcaufgabendata[i].substring(3,4) == 'u'){anzahlungeloesteraufgaben++;}
-        if (zeigeaufgaben5 && imcaufgabendata[i].length >= 5){if(imcaufgabendata[i].substring(4,5)=='u'){anzahlungeloesteraufgaben++;}}
-        if (zeigeaufgaben6 && imcaufgabendata[i].length == 6){if(imcaufgabendata[i].substring(5,6)=='u'){anzahlungeloesteraufgaben++;}}
-      }
-      if(anzahlungeloesteraufgaben>0){
-        int randomnumber = Random().nextInt(anzahlungeloesteraufgaben);
+      if( ! trainierenurspeziellesthema){
+        // Trainiere alle Aufgaben
+        jahr = 0;
+        tag = 0;
+        aufgabe = 0;
         for(int i = 0; i< (imcaufgabendata.length); i++){
-          if (zeigeaufgaben1 && imcaufgabendata[i].substring(0,1) == 'u'){if(0 == randomnumber){jahr = i ~/ 2 + 1994;tag = i%2 +1;aufgabe =1;break;}else{randomnumber--;}}
-          if (zeigeaufgaben2 && imcaufgabendata[i].substring(1,2) == 'u'){if(0 == randomnumber){jahr = i ~/ 2 + 1994;tag = i%2 +1;aufgabe =2;break;}else{randomnumber--;}}
-          if (zeigeaufgaben3 && imcaufgabendata[i].substring(2,3) == 'u'){if(0 == randomnumber){jahr = i ~/ 2 + 1994;tag = i%2 +1;aufgabe =3;break;}else{randomnumber--;}}
-          if (zeigeaufgaben4 && imcaufgabendata[i].substring(3,4) == 'u'){if(0 == randomnumber){jahr = i ~/ 2 + 1994;tag = i%2 +1;aufgabe =4;break;}else{randomnumber--;}}
-          if (zeigeaufgaben5 && imcaufgabendata[i].length >= 5){if(imcaufgabendata[i].substring(4,5)=='u'){if(0 == randomnumber){jahr = i ~/ 2 + 1994;tag = i%2 +1;aufgabe =5;break;}else{randomnumber--;}}}
-          if (zeigeaufgaben6 && imcaufgabendata[i].length == 6){if(imcaufgabendata[i].substring(5,6)=='u'){if(0 == randomnumber){jahr = i ~/ 2 + 1994;tag = i%2 +1;aufgabe =6;break;}else{randomnumber--;}}}
+          if (zeigeaufgaben1 && imcaufgabendata[i].substring(0,1) == 'u'){anzahlungeloesteraufgaben++;}
+          if (zeigeaufgaben2 && imcaufgabendata[i].substring(1,2) == 'u'){anzahlungeloesteraufgaben++;}
+          if (zeigeaufgaben3 && imcaufgabendata[i].substring(2,3) == 'u'){anzahlungeloesteraufgaben++;}
+          if (zeigeaufgaben4 && imcaufgabendata[i].substring(3,4) == 'u'){anzahlungeloesteraufgaben++;}
+          if (zeigeaufgaben5 && imcaufgabendata[i].length >= 5){if(imcaufgabendata[i].substring(4,5)=='u'){anzahlungeloesteraufgaben++;}}
+          if (zeigeaufgaben6 && imcaufgabendata[i].length == 6){if(imcaufgabendata[i].substring(5,6)=='u'){anzahlungeloesteraufgaben++;}}
+        }
+        if(anzahlungeloesteraufgaben>0){
+          int randomnumber = Random().nextInt(anzahlungeloesteraufgaben);
+          for(int i = 0; i< (imcaufgabendata.length); i++){
+            if (zeigeaufgaben1 && imcaufgabendata[i].substring(0,1) == 'u'){if(0 == randomnumber){jahr = i ~/ 2 + 1994;tag = i%2 +1;aufgabe =1;break;}else{randomnumber--;}}
+            if (zeigeaufgaben2 && imcaufgabendata[i].substring(1,2) == 'u'){if(0 == randomnumber){jahr = i ~/ 2 + 1994;tag = i%2 +1;aufgabe =2;break;}else{randomnumber--;}}
+            if (zeigeaufgaben3 && imcaufgabendata[i].substring(2,3) == 'u'){if(0 == randomnumber){jahr = i ~/ 2 + 1994;tag = i%2 +1;aufgabe =3;break;}else{randomnumber--;}}
+            if (zeigeaufgaben4 && imcaufgabendata[i].substring(3,4) == 'u'){if(0 == randomnumber){jahr = i ~/ 2 + 1994;tag = i%2 +1;aufgabe =4;break;}else{randomnumber--;}}
+            if (zeigeaufgaben5 && imcaufgabendata[i].length >= 5){if(imcaufgabendata[i].substring(4,5)=='u'){if(0 == randomnumber){jahr = i ~/ 2 + 1994;tag = i%2 +1;aufgabe =5;break;}else{randomnumber--;}}}
+            if (zeigeaufgaben6 && imcaufgabendata[i].length == 6){if(imcaufgabendata[i].substring(5,6)=='u'){if(0 == randomnumber){jahr = i ~/ 2 + 1994;tag = i%2 +1;aufgabe =6;break;}else{randomnumber--;}}}
+          }
+        }
+        else{
+          //Keine Aufgabe mehr verfügbar
+          returnwert = 2;
         }
       }
       else{
-        //Keine Aufgabe mehr verfügbar
-        returnwert = 2;
+        // Trainiere nur ein spezielles Thema
+        jahr = 0;
+        tag = 0;
+        aufgabe = 0;
+        for(int i = 0; i< (imcaufgabendata.length); i++){
+          if (zeigeaufgaben1 && imcaufgabendata[i].substring(0,1) == 'u'){if (aufgabenthemen[ i ~/ 2 ][i%2][0].contains(trainingsthema)){anzahlungeloesteraufgaben++;}}
+          if (zeigeaufgaben2 && imcaufgabendata[i].substring(1,2) == 'u'){if (aufgabenthemen[ i ~/ 2 ][i%2][1].contains(trainingsthema)){anzahlungeloesteraufgaben++;}}
+          if (zeigeaufgaben3 && imcaufgabendata[i].substring(2,3) == 'u'){if (aufgabenthemen[ i ~/ 2 ][i%2][2].contains(trainingsthema)){anzahlungeloesteraufgaben++;}}
+          if (zeigeaufgaben4 && imcaufgabendata[i].substring(3,4) == 'u'){if (aufgabenthemen[ i ~/ 2 ][i%2][3].contains(trainingsthema)){anzahlungeloesteraufgaben++;}}
+          if (zeigeaufgaben5 && imcaufgabendata[i].length >= 5){if(imcaufgabendata[i].substring(4,5)=='u'){if (aufgabenthemen[ i ~/ 2 ][i%2][4].contains(trainingsthema)){anzahlungeloesteraufgaben++;}}}
+          if (zeigeaufgaben6 && imcaufgabendata[i].length == 6){if(imcaufgabendata[i].substring(5,6)=='u'){if (aufgabenthemen[ i ~/ 2 ][i%2][5].contains(trainingsthema)){anzahlungeloesteraufgaben++;}}}
+        }
+        if(anzahlungeloesteraufgaben>0){
+          int randomnumber = Random().nextInt(anzahlungeloesteraufgaben);
+          for(int i = 0; i< (imcaufgabendata.length); i++){
+            if (zeigeaufgaben1 && imcaufgabendata[i].substring(0,1) == 'u' && aufgabenthemen[ i ~/ 2 ][i%2][0].contains(trainingsthema)){if(0 == randomnumber){jahr = i ~/ 2 + 1994;tag = i%2 +1;aufgabe =1;break;}else{randomnumber--;}}
+            if (zeigeaufgaben2 && imcaufgabendata[i].substring(1,2) == 'u' && aufgabenthemen[ i ~/ 2 ][i%2][1].contains(trainingsthema)){if(0 == randomnumber){jahr = i ~/ 2 + 1994;tag = i%2 +1;aufgabe =2;break;}else{randomnumber--;}}
+            if (zeigeaufgaben3 && imcaufgabendata[i].substring(2,3) == 'u' && aufgabenthemen[ i ~/ 2 ][i%2][2].contains(trainingsthema)){if(0 == randomnumber){jahr = i ~/ 2 + 1994;tag = i%2 +1;aufgabe =3;break;}else{randomnumber--;}}
+            if (zeigeaufgaben4 && imcaufgabendata[i].substring(3,4) == 'u' && aufgabenthemen[ i ~/ 2 ][i%2][3].contains(trainingsthema)){if(0 == randomnumber){jahr = i ~/ 2 + 1994;tag = i%2 +1;aufgabe =4;break;}else{randomnumber--;}}
+            if (zeigeaufgaben5 && imcaufgabendata[i].length >= 5){if(imcaufgabendata[i].substring(4,5)=='u' && aufgabenthemen[ i ~/ 2 ][i%2][4].contains(trainingsthema)){if(0 == randomnumber){jahr = i ~/ 2 + 1994;tag = i%2 +1;aufgabe =5;break;}else{randomnumber--;}}}
+            if (zeigeaufgaben6 && imcaufgabendata[i].length == 6){if(imcaufgabendata[i].substring(5,6)=='u' && aufgabenthemen[ i ~/ 2 ][i%2][5].contains(trainingsthema)){if(0 == randomnumber){jahr = i ~/ 2 + 1994;tag = i%2 +1;aufgabe =6;break;}else{randomnumber--;}}}
+          }
+        }
+        else{
+          //Keine Aufgabe mehr verfügbar
+          returnwert = 2;
+        }
       }
     }
     else{
@@ -233,6 +401,5 @@ class CurrentExerciseProvider extends ChangeNotifier{
     await ladeeinstellungen();
     berechnestatistiken();
     notifyListeners();
-    //await ladeeulaakzeptiert();
   }
 }

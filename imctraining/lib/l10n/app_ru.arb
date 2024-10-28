@@ -10,5 +10,7 @@
     "fullscreen": "Полный экран",
     "showproblemnumbers": "Показать задачи",
     "showproblems": "Показать задачи",
-    "solved": "решено"
+    "solved": "решено",
+    "problemsfromaspecifictopic": "Problems from a specific topic",
+    "topic": "Topic"
 }

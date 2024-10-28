@@ -10,5 +10,7 @@
     "fullscreen": "Helskärm",
     "showproblemnumbers": "Vis uppgiftsnumren",
     "showproblems": "Vis problemen",
-    "solved": "löst"
+    "solved": "löst",
+    "problemsfromaspecifictopic": "Problems from a specific topic",
+    "topic": "Topic"
 }

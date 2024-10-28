@@ -10,5 +10,7 @@
     "fullscreen": "Full screen",
     "showproblemnumbers": "Show problem numbers",
     "showproblems": "Show problems",
-    "solved": "solved"
+    "solved": "solved",
+    "problemsfromaspecifictopic": "Problems from a specific topic",
+    "topic": "Topic"
 }

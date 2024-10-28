@@ -105,6 +105,63 @@ class _SettingsState extends State<Settings> {
               Checkbox(value: context.watch<CurrentExerciseProvider>().zeigeaufgaben6, onChanged: (value){context.read<CurrentExerciseProvider>().aenderezeigeaufgabenbestimmertnummer(6);},)
             ],
           ),
+          Container(height: 20,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(AppLocalizations.of(context)!.problemsfromaspecifictopic),
+              Switch(
+                value: context.watch<CurrentExerciseProvider>().trainierenurspeziellesthema,
+                onChanged: (bool value){context.read<CurrentExerciseProvider>().wechseletrainierenurspeziellesthema();}
+              )
+            ],
+          ),
+          Container(height: 20,),
+          DropdownMenu(
+            helperText: AppLocalizations.of(context)!.topic,
+            enabled: context.watch<CurrentExerciseProvider>().trainierenurspeziellesthema,
+            initialSelection: context.watch<CurrentExerciseProvider>().trainingsthema,
+            //width: 90 ,
+            onSelected: (themaselected){
+              if(themaselected != null){
+                context.read<CurrentExerciseProvider>().wechseletrainingsthema(themaselected);
+                /*setState(() {
+                  tagauswahl = tagauswahlselected;
+                });*/
+              }
+            },
+            dropdownMenuEntries: const <DropdownMenuEntry>[
+              DropdownMenuEntry(value: 'n', label: 'Number Theory'),
+              DropdownMenuEntry(value: 'k', label: 'Combinatorics'),
+              DropdownMenuEntry(value: 'l', label: 'Linear Algebra'),
+              DropdownMenuEntry(value: 'a', label: 'Algebra'),
+              DropdownMenuEntry(value: 'r', label: 'Real Analysis'),
+              DropdownMenuEntry(value: 'c', label: 'Complex Analysis'),
+              DropdownMenuEntry(value: 'p', label: 'Polynomials'),
+              DropdownMenuEntry(value: 'g', label: 'Geometry'),
+            ],
+          ),
+          /*Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text("Hi"),
+              DropdownMenu(
+                helperText: "Topic",//AppLocalizations.of(context)!.day,
+                //width: 90 ,
+                onSelected: (tagauswahlselected){
+                  if(tagauswahlselected != null){
+                    /*setState(() {
+                      tagauswahl = tagauswahlselected;
+                    });*/
+                  }
+                },
+                dropdownMenuEntries: const <DropdownMenuEntry>[
+                  DropdownMenuEntry(value: 1, label: '1'),
+                  DropdownMenuEntry(value: 2, label: '2'),
+                ],
+              ),
+            ],
+          ),*/
         ],
       )
     );

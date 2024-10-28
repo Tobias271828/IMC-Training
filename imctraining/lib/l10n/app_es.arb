@@ -1,14 +1,16 @@
 {
-"imctraining": "Entrenamiento",
-"imcproblems": "Problemas de IMC",
-"settings": "Ajustes",
-"problemmarkedassolved": "Problema marcado como solvado",
-"problemsolved": "Problema solvado",
-"year" : "Año",
-"day" : "Día",
-"problem": "Problema",
-"fullscreen": "En pantalla completa",
-"showproblemnumbers": "Números de problemas",
-"showproblems": "Muestra los problemas",
-"solved": "solvado"
+    "imctraining": "Entrenamiento",
+    "imcproblems": "Problemas de IMC",
+    "settings": "Ajustes",
+    "problemmarkedassolved": "Problema marcado como solvado",
+    "problemsolved": "Problema solvado",
+    "year" : "Año",
+    "day" : "Día",
+    "problem": "Problema",
+    "fullscreen": "En pantalla completa",
+    "showproblemnumbers": "Números de problemas",
+    "showproblems": "Muestra los problemas",
+    "solved": "solvado",
+    "problemsfromaspecifictopic": "Problems from a specific topic",
+    "topic": "Topic"
 }
