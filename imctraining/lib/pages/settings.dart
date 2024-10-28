@@ -133,35 +133,14 @@ class _SettingsState extends State<Settings> {
             dropdownMenuEntries: <DropdownMenuEntry>[
               DropdownMenuEntry(value: 'n', label: AppLocalizations.of(context)!.numbertheory),
               DropdownMenuEntry(value: 'k', label: AppLocalizations.of(context)!.combinatorics),
-              DropdownMenuEntry(value: 'l', label: AppLocalizations.of(context)!.linearalgebra),
               DropdownMenuEntry(value: 'a', label: AppLocalizations.of(context)!.algebra),
+              DropdownMenuEntry(value: 'l', label: AppLocalizations.of(context)!.linearalgebra),
               DropdownMenuEntry(value: 'r', label: AppLocalizations.of(context)!.realanalysis),
               DropdownMenuEntry(value: 'c', label: AppLocalizations.of(context)!.complexanalysis),
               DropdownMenuEntry(value: 'p', label: AppLocalizations.of(context)!.polynomials),
               DropdownMenuEntry(value: 'g', label: AppLocalizations.of(context)!.geometry),
             ],
           ),
-          /*Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text("Hi"),
-              DropdownMenu(
-                helperText: "Topic",//AppLocalizations.of(context)!.day,
-                //width: 90 ,
-                onSelected: (tagauswahlselected){
-                  if(tagauswahlselected != null){
-                    /*setState(() {
-                      tagauswahl = tagauswahlselected;
-                    });*/
-                  }
-                },
-                dropdownMenuEntries: const <DropdownMenuEntry>[
-                  DropdownMenuEntry(value: 1, label: '1'),
-                  DropdownMenuEntry(value: 2, label: '2'),
-                ],
-              ),
-            ],
-          ),*/
         ],
       )
     );
