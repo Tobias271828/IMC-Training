@@ -11,14 +11,14 @@
     "showproblemnumbers": "Vis uppgiftsnumren",
     "showproblems": "Vis problemen",
     "solved": "löst",
-    "problemsfromaspecifictopic": "Problems from a specific topic",
-    "topic": "Topic",
-    "numbertheory": "Number Theory",
-    "combinatorics": "Combinatorics",
-    "linearalgebra": "Linear Algebra",
+    "problemsfromaspecifictopic": "Välj ämnet av problemen",
+    "topic": "Ämnet",
+    "numbertheory": "Talteori",
+    "combinatorics": "Kombinatorik",
+    "linearalgebra": "Linjär algebra",
     "algebra": "Algebra",
-    "realanalysis": "Real Analysis",
-    "complexanalysis": "Complex Analysis",
-    "polynomials": "Polynomials",
-    "geometry": "Geometry"
+    "realanalysis": "Reell analys",
+    "complexanalysis": "Komplex analys",
+    "polynomials": "Polynom",
+    "geometry": "Geometri"
 }
