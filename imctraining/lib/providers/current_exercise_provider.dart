@@ -55,7 +55,17 @@ class CurrentExerciseProvider extends ChangeNotifier{
   String trainingsthema = 'n';
 
   
-  //Aufgabenzuordnung zu Themengebieten: TBA
+  //Aufgabenzuordnung zu Themengebieten:
+  /*
+    n = Zahlentheorie = Number Theory
+    k = Kombinatorik = Combinatorics
+    l = Lineare Algebra = Linear Algebra
+    a = Algebra = Algebra
+    r = Reelle Analysis = Real Analysis
+    c = Komplexe Analysis = Complex Analysis
+    p = Polynome = Polynomials
+    g = Geometrie = Geometry
+  */
   static const aufgabenthemen = [
     [ // 1994
       ['l','r','nk','l','r','r'], // Tag 1
